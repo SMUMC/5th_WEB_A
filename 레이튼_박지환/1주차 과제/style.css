@@ -59,4 +59,18 @@ button {
     color: white;
     font-size: 20px;
     border-radius: 20px;
+    border: none;
+}
+.v-line {
+    font-size: 20px;
+    
+}
+.links-container{
+    margin-top: 20px;
+}
+.link{
+    margin-right: 10px;
+    color:black;
+    text-decoration: none;
+    margin-left: 10px;
 }
