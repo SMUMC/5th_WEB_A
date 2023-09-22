@@ -1,11 +1,12 @@
+* {
+	box-sizing:border-box;
+	margin: 0;
+	padding: 0;
+}
+
 body {
-    background-image: url('./image/umcBackground.svg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
-    width: 100vw;
-    margin: 0;
+	width: 100vw;
+	height: 100vh;
 }
 
 .container {
@@ -14,63 +15,71 @@ body {
     justify-content: center;
 }
 
-.box {
-    background-color: rgba(225, 235, 255, 0.653);
-    border-radius: 30px;
-    width: 700px;
-    height: 350px;
-    text-align: center;
-    margin-top: 150px;
-    padding: 40px;
+.background {
+    display: flex;
+    background-image: url('./image/umcBackground.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+
 }
-.name {
-    font-size: 50px;
-    margin-bottom: 10px;
+.login_box {
+    display: flex;
+    flex-direction: column;  /* 각 요소들 위아래로 배치하기 위해 */
+    justify-content: center;
+    align-items: center;
+    border-radius: 5%;
+    width: 55%;
+    height: 65%;
+    background-color: rgb(255, 255, 255, 0.6);
 }
-#line1 {
-    width: 50%;
-    margin-bottom: 0px;
-    background:whitesmoke;
-    height:1px;
-    border:0;
+.first_h{
+    font-size: 40px;
 }
-input {
-    background: transparent;
-    border: none;
-    padding: 10px;
+#login_line {
     width: 40%;
-    font-size: 15px;
-    margin-bottom: 10px;
-    text-align: left;
+    height: 1px;
+    margin-top: 1px;
+    margin-bottom: 40px;
+    background-color: transparent
 }
-input::placeholder{
-    color: whitesmoke;
+.make_line {
+    width: 30%;
+    height: 1px;
+    margin-top: 1px;
+    background-color: transparent
 }
-.line2 {
-    width:40%;
-    background:whitesmoke;
-    height:1px;
-    border:0;
-}
-button {
-    padding: 15px 120px;
-    margin-top: 10px;
-    background-color: black;
-    color: white;
-    font-size: 20px;
-    border-radius: 20px;
+.input_block {
+    background-color: transparent;
     border: none;
+    width: 20%;
+    height: 10%;
+    margin-right: 50px;
 }
-.v-line {
-    font-size: 20px;
-    
+.button_block {
+    margin-top: 50px;
+    border: none;
+    color: aliceblue;
+    border-radius: 10px;
+    background: black;
+    width: 30%;
+    height: 10%;
 }
-.links-container{
-    margin-top: 20px;
+footer{
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
-.link{
-    margin-right: 10px;
-    color:black;
+.links {
+    display: inline;
     text-decoration: none;
-    margin-left: 10px;
+    color:black;
+}
+.v_line {
+    border-right: 10px;
 }
