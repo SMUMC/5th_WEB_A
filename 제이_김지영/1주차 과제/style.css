@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+.container {
+  background-image : url('background.svg');
+  background-size: cover; 
+  height: 100%;
+  
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  opacity: 0.5;
+  width: 35%;
+  height: 30%;
+}
+
+.login-button {
+  background-color: grey;
+}
+
+.link-container {
+  margin-top: 10px;
+}
+
+.link {
+  background-color: grey;
+  color: white;
+}
