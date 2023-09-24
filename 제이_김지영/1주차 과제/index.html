@@ -1,39 +1,33 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Login Page</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <title>Login Page</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
-</head>
-
-<body>
-  <div class="container">
-    <div class="background">
+  <body>
+    <!-- CONTAINER : Background -->
+    <section class="container">
+      <!-- LOGIN_CONTAINER -->
       <div class="login-container">
         <h1 class="box-title">로그인</h1>
-        <hr class="hr"/>
-
-        <div>
-          <form action="">
-          아이디 <br>
-          <input type="text" name="id">
-          <hr class="hr"/>
-          비밀번호 <br>
-          <input type="password" name="pass">
-          <hr class="hr"/>
-          <button class="submit-button" type="button">로그인</button>
-          </form>
-        </div>
-
-        <hr class="interval"/>
+        <hr class="hr" /> 
+         <!-- LOGIN_FORM -->
+        <form action="" class="login-form">
+          <input type="text" placeholder="아이디" class="id" />
+          <input type="password" placeholder="비밀번호" class="pw" />
+        </form>
+      <div class="login-footer">
+        <button class="submit-button" type="button">로그인</button>
+        <!-- LOGIN_FOOTER -->
         <div class="user-link">
-          <a href="https://www.naver.com">회원가입</a>
-          <span> | </span>
-          <a href="https://www.google.com">비밀번호 찾기</a>
+        <a href="https://www.naver.com">회원가입</a>
+        <p> | </p>
+        <a href="https://www.google.com">아이디/비밀번호 찾기</a>
         </div>
-      </div>  
-    </div>
-  </div>
-</body>
+      </div>
+      </div>
+    </section>
+  </body>
 </html>
