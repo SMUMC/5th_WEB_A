@@ -3,38 +3,37 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Login</title>
+  <title>Login Page</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
   <div class="container">
-    <div class="login-container">
-      <h1>로그인</h1>
-      <hr>
-      
-      <div>
-        <p>아이디</p>
-        <input>
-      </div>
-      
-      <div>
-        <p>비밀번호</p>
-        <input type="password">
-      </div>
-      
-      <div class="login-button">
-				<form>
-        <input type="submit" placeholder="button">
-				</form>
-      </div>  
-      <div class="link">
-        <div class="link-container">
-            <a href="https://www.naver.com">회원가입 | </a>
-            <a href="https://www.naver.com">비밀번호 찾기</a>
+    <div class="background">
+      <div class="login-container">
+        <h1 class="box-title">로그인</h1>
+        <hr class="hr"/>
+
+        <div>
+          <form action="">
+          아이디 <br>
+          <input type="text" name="id">
+          <hr class="hr"/>
+          비밀번호 <br>
+          <input type="password" name="pass">
+          <hr class="hr"/>
+          <button class="submit-button" type="button">로그인</button>
+          </form>
         </div>
-      </div>
-    </div>  
+
+        <hr class="interval"/>
+        <div class="user-link">
+          <a href="https://www.naver.com">회원가입</a>
+          <span> | </span>
+          <a href="https://www.google.com">비밀번호 찾기</a>
+        </div>
+      </div>  
+    </div>
   </div>
 </body>
 </html>

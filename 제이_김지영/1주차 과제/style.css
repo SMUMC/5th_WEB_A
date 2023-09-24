@@ -9,15 +9,18 @@ body {
   height: 100vh;
 }
 
-.container {
+
+.background {
   background-image : url('background.svg');
   background-size: cover; 
-  height: 100%;
-  
+
   display: flex;
   flex-direction: column; 
   justify-content: center;
   align-items: center;
+
+  width: 100vw;
+  height: 100vh;
 }
 
 .login-container {
@@ -26,20 +29,56 @@ body {
   justify-content: center;
   align-items: center;
   background-color: white;
-  opacity: 0.5;
-  width: 35%;
-  height: 30%;
+  opacity: 0.3;
+  width: 25%;
+  height: 35%;
+  border-radius: 15px 15px 15px 15px;
 }
 
-.login-button {
-  background-color: grey;
+.box-title{
+  font-weight: bold;
+  font-size: 40px;
 }
 
-.link-container {
-  margin-top: 10px;
+.hr{
+  border: 0;
+  height: 10px;
+  background-color: white;
+  opacity: 1;
 }
 
-.link {
-  background-color: grey;
+.submit-button {
+  background-color: black;
   color: white;
+  width: 170px;
+  height: 35px;
+  margin: auto;
+  display: block;
+  font-size: 17px;
+  border-radius: 10px 10px 10px 10px;
+}
+
+.interval {
+  height: 30px;
+}
+
+.user-link {
+  color: black;
+}
+
+a:link {
+  color : black;
+  text-decoration: none;
+}
+a:visited {
+  color : black;
+  text-decoration: none;
+}
+a:hover {
+  color : black;
+  text-decoration: none;
+}
+a:active {
+  color : black;
+  text-decoration: none;
 }
