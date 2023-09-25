@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Login Page</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <!-- CONTAINER : Background -->
+    <section class="container">
+      <!-- LOGIN_CONTAINER -->
+      <div class="login-container">
+        <h1 class="box-title">회원 가입</h1>
+        <hr class="hr" /> 
+         <!-- LOGIN_FORM -->
+        <form action="" class="login-form">
+          <p>
+            <label for="name" style="font-size: 12px" class="name1">이름</label>
+            <input type="text" placeholder="" id="name" />
+            <label for="name" style="font-size: 10px; color:red" class="name2 hidden">필수 입력 항목입니다!</label>
+            <label for="name" style="font-size: 10px; color:blue" class="name3 hidden">멋진 이름이네요!</label>
+          </p>
+          <p >
+            <label for="nickname" style="font-size: 12px" class="nickname1">닉네임</label>
+            <input type="text" placeholder="" id="nickname" />
+            <label for="nickname" style="font-size: 10px; color:red" class="nickname2 hidden" >닉네임은 2~5글자로 구성해주세요!</label>
+            <label for="nickname" style="font-size: 10px; color:blue" class="nickname3 hidden" >멋진 닉네임이군요!</label>
+          </p>
+          <p>
+            <label for="email" style="font-size: 12px" class="email1">이메일</label>
+            <input type="email" placeholder="" id="email" />
+            <label for="email" style="font-size: 10px; color:red" class="email2 hidden" >올바른 메일 형식이 아닙니다!</label>
+            <label for="email" style="font-size: 10px; color:blue" class="email3 hidden" >올바른 메일 형식입니다!</label>
+          </p>
+          <p>
+            <label for="pw" style="font-size: 12px" class="pw1">비밀번호</label>
+            <input type="password" placeholder="" id="pw" />
+            <label for="pw" style="font-size: 10px; color:red" class="pw2 hidden" >영어+숫자+특수문자를 조합하여 작성해주세요.</label>
+            <label for="pw" style="font-size: 10px; color:blue" class="pw3 hidden" >안전한 비밀번호입니다!</label>
+          </p>
+          <p>
+            <label for="pw-check" style="font-size: 12px" class="pw-check1">비밀번호 확인</label>
+            <input type="password" placeholder="" id="pw-check" />
+            <label for="pw-check" style="font-size: 10px; color:red" class="pw-check2 hidden" >비밀번호가 일치하지 않습니다.</label>
+            <label for="pw-check" style="font-size: 10px; color:blue" class="pw-check3 hidden" >비밀번호가 일치합니다.</label>
+          </p>
+        </form>
+      <div class="login-footer">
+        <button class="submit-button" type="button">가입하기</button>
+      </div>
+      </div>
+    </section>
+    <script src="effect.js"></script>
+  </body>
+</html>
