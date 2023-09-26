@@ -84,7 +84,7 @@ function emailForm(value) {
 }
 
 function passwordRule(value) {
-    return /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/.test(str);
+    return /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/.test(value);
 } 
 
 function passwordCheck(value1) {
