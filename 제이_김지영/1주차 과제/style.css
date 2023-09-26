@@ -28,7 +28,7 @@ body {
   background-color: white;
   opacity: 0.5;
   width: 30%;
-  height: 37%;
+  height: 40%;
   border-radius: 15px 15px 15px 15px;
   gap: 10px;
 }
@@ -37,7 +37,7 @@ body {
   font-weight: bold;
   font-size: 40px;
 }
-
+ 
 .hr {
   width: 80%;
   background-color: grey;

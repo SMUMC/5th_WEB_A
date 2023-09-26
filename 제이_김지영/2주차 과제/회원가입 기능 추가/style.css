@@ -28,7 +28,7 @@ body {
   background-color: white;
   opacity: 0.5;
   width: 30%;
-  height: 75%;
+  height: 70%;
   border-radius: 15px 15px 15px 15px;
   gap: 10px;
 }
@@ -81,10 +81,18 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 16px;
+  gap: 3px;
   margin-bottom: 0px;
 }
 
+.hidden {
+  display: none;
+  /*visibility:hidden;*/
+}
+.hidden-label {
+  /*display: none;*/
+  visibility: hidden;
+}
 
 input {
   width: 230px;
@@ -93,7 +101,6 @@ input {
   background-color: transparent;
   font-size: 15px;
   border: 1.5px solid rgb(145, 134, 134);
-  outline: none;
   padding-left: 10px;
   border-radius: 10px 10px 10px 10px;
 
@@ -102,10 +109,6 @@ input {
   text-align: left;
 }
 
-.hidden {
-  display: none;
-  /*visibility:hidden;*/
-}
 /*
 input[id="name"] {
   position: relative;
