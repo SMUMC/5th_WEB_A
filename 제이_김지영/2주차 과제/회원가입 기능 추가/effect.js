@@ -84,9 +84,15 @@ function emailForm(value) {
 }
 
 function passwordRule(value) {
-    return /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/.test(value);
+    return /^(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$/.test(value);
 } 
 
 function passwordCheck(value1) {
-    return value1 === pw.value //boolean
+    if (value1 == "" || value1 == null) {
+        pw_check3.classList.add('hidden');
+        pw_check2.classList.add('hidden');
+    }
+    else {
+        return value1 === pw.value //boolean
+    }
 }
