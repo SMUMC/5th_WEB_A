@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>회원가입 페이지</title>
+</head>
+<body>
+    <div class="background">
+        <div class="container">
+            <div class="signup_box">
+                <h1 class="first_h">회원 가입</h1>
+                <hr class="line">
+                <div class="input_box">
+                    <label for="name" class="input_title">이름</label>
+                    <input class="input_block" type="text" name="" id="name">
+                    <div class="check_validation" id="alert_name">필수 입력 항목입니다!</div>
+                    <label for="nickname" class="input_title">닉네임</label>
+                    <input class="input_block" type="text" name="" id="nickname">
+                    <div class="check_validation" id="alert_nickname">닉네임은 2~5글자로 구성해주세요!</div>
+                    <label for="email" class="input_title">이메일</label>
+                    <input class="input_block" type="text" name="" id="email">
+                    <div class="check_validation" id="alert_email">올바른 메일 형식이 아닙니다!</div>
+                    <label for="password" class="input_title">비밀번호</label>
+                    <input class="input_block" type="password" name="" id="password">
+                    <div class="check_validation" id="alert_password">영어+숫자+특수문자를 조합하여 작성해주세요.</div>
+                    <label for="checkpass" class="input_title">비밀번호 확인</label>
+                    <input class="input_block" type="password" name="" id="checkpass">
+                    <div class="check_validation" id="alert_checkpass">비밀번호가 일치하지 않습니다.</div>
+                </div>
+                <button class="button_block" id="signup">가입하기</button>
+            </div>
+        </div>
+    </div>
+    <div class="modal_wrapped">
+        <div class="modal">
+            <h1 class="modal_title">가입 성공!</h1>
+            <p>UMC 챌린저 가입을 축하합니다.</p>
+            <div class="button_wrapped">
+                <button id="close">닫기</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>            
+</body>
+</html>
