@@ -19,52 +19,108 @@ const pw_check = document.querySelector('#pw-check');
 const pw_check2 = document.querySelector('.pw-check2'); //비밀번호가 일치하지 않습니다.
 const pw_check3 = document.querySelector('.pw-check3'); //비밀번호가 일치합니다.
 
+const button = document.querySelector(".submit-button");
+button.disabled = true;
+let check = false;
+let userNameCheck = false;
+let nickNameCheck = false;
+let emailCheck = false;
+let pwCheck = false;
+let pwReCheck = false;
+
+
+if (userNameCheck  && nickNameCheck && emailCheck && pwCheck && pwReCheck) {
+    check = true;
+}
+
+//activate submit button
+if (check) { //if (check == true)
+    button.disabled = false;
+}
+
+//button click event
+button.onclick = function() {
+    console.log('button clicked!')
+    setTimeout(function(){
+        alert("가입이 완료되었습니다.")
+    }, 0);
+}
+
+
 userName.onkeyup = function () {
+    if (userName.value === ""){
+        userNameCheck = false 
+    } 
     if (isMoreThan1Letter(userName.value)){ //success condition
         //success
         name2.classList.add('hidden');
         name3.classList.remove('hidden');
+        userNameCheck = true
     } else {
         //fail
         name2.classList.remove('hidden');
         name3.classList.add('hidden');
-}}
+        userNameCheck = false
+    }
+}
+//Test
+console.log("userNameCheck:", userNameCheck, userName);
 
 nickName.onkeyup = function() {
+    if (nickName.value === ""){
+        nickNameCheck = false
+    } 
     if (is2to5Letter(nickName.value)){
         nickname2.classList.add('hidden');
         nickname3.classList.remove('hidden');
+        nickNameCheck = true
     } else {
         nickname2.classList.remove('hidden');
         nickname3.classList.add('hidden');
+        nickNameCheck = false
 }}
 
 email.onkeyup = function() {
+    if (email.value === ""){
+        emailCheck = false
+    } 
     if (emailForm(email.value)){
         email2.classList.add('hidden');
         email3.classList.remove('hidden');
+        emailCheck = true
     } else {
         email2.classList.remove('hidden');
         email3.classList.add('hidden');
+        emailCheck = false
 }}
 
 pw.onkeyup = function() {
+    if (pw.value === ""){
+        pwCheck = false
+    } 
     if (passwordRule(pw.value)){
         pw2.classList.add('hidden');
         pw3.classList.remove('hidden');
+        pwCheck = true
     } else {
         pw2.classList.remove('hidden');
         pw3.classList.add('hidden');
+        pwCheck = false
 }}
 
 
 pw_check.onkeyup = function() {
+    if (pw_check.value === ""){
+        pwReCheck = false
+    } 
     if (passwordCheck(pw_check.value)){
         pw_check2.classList.add('hidden');
         pw_check3.classList.remove('hidden');
+        pwReCheck = true
     } else {
         pw_check2.classList.remove('hidden');
         pw_check3.classList.add('hidden');
+        pwReCheck = false
 }}
 
 function isMoreThan1Letter(value) {
@@ -88,7 +144,7 @@ function passwordRule(value) {
 } 
 
 function passwordCheck(value1) {
-    if (value1 == "" || value1 == null) {
+    if (value1 == "") {
         pw_check3.classList.add('hidden');
         pw_check2.classList.add('hidden');
     }
