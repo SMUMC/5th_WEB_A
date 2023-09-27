@@ -100,7 +100,7 @@
             const email = document.getElementById("email-input").value;
             const password = document.getElementById("password-input").value;
             const confirmPassword = document.getElementById("confirm-password-input").value;
-
+            
             complete = 0;
             
             if (username === "") {
@@ -139,7 +139,7 @@
                 complete += 1;
             }
 
-            if (confirmPassword !== password) {
+            if (confirmPassword === "" || confirmPassword !== password) {
                 confirmPasswordElement.style.display = "block";
             } else {
                 confirmPasswordElement.style.display = "block";                
