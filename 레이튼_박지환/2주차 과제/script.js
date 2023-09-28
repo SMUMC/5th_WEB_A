@@ -2,8 +2,6 @@ const button = document.querySelector(".button_block");
 
 function validationForm() {
 
-    let allCheck = 1;
-
     let nameVal = document.getElementById("name").value;
     let nickNameVal = document.getElementById("nickname").value;
     let emailVal = document.getElementById("email").value;
@@ -24,61 +22,81 @@ function validationForm() {
     const modal = document.querySelector('.modal_wrapped');
     const signupButton = document.querySelector('#signup');
     const closeButton = document.querySelector('#close');
+    const closeBackground = document.querySelector('.modal_wrapped');
+    
+    let allCheck = true;
 
     
     if(nameVal === "") {
-        alertName.style.visibility = 'visible'; 
-        allCheck = 0;
+        alertName.style.display = 'flex'; 
+        allCheck = false;
     } else if (nameVal.match(nameRegex)) {
         alertName.textContent = '멋진 이름이네요!';
         alertName.style.color = 'green';
-        alertName.style.visibility = 'visible';
+        alertName.style.display = 'flex'; 
     }
     
     
-    if(!nickNameVal.match(nickRegex)) {
-        alertNick.style.visibility = 'visible';
-        allCheck = 0;
-    } else if (nickNameVal.match(nickRegex)) {
-        alertNick.textContent = '멋진 닉네임이군요!'; // 뭔가 반복되는 부분들 함수로 만들면 간지날듯?
+    if(nickNameVal.length < 2 || nickNameVal.length > 5) {
+        alertNick.style.display = 'flex';
+        allCheck = false;   
+    } else {
+        alertNick.textContent = '멋진 닉네임이군요!';
         alertNick.style.color = 'green';
-        alertNick.style.visibility = 'visible';
+        alertNick.style.display = 'flex';
     }
+
+    // if(!nickNameVal.match(nickRegex)) {
+    //     alertNick.style.visibility = 'visible';
+    //     allCheck = false;
+    // } else if (nickNameVal.match(nickRegex)) {
+    //     alertNick.textContent = '멋진 닉네임이군요!'; 
+    //     alertNick.style.color = 'green';
+    //     alertNick.style.visibility = 'visible';
+    // }
     
     if(!emailVal.match(emailRegex)) {
-        alertEmail.style.visibility = 'visible';
-        allCheck = 0;
+        alertEmail.style.display = 'flex';
+        allCheck = false;
     } else if (emailVal.match(emailRegex)) {
         alertEmail.textContent = '올바른 메일 형식입니다!';
         alertEmail.style.color = 'green';
-        alertEmail.style.visibility = 'visible';
+        alertEmail.style.display = 'flex';
     }
     
     if(!passwordVal.match(passwordRegex)) {
-        alertPassword.style.visibility = 'visible';
-        allCheck = 0;
+        alertPassword.style.display = 'flex';
+        allCheck = false;
     } else if (passwordVal.match(passwordRegex)) {
         alertPassword.textContent = '안전한 비밀번호입니다!';
         alertPassword.style.color = 'green';
-        alertPassword.style.visibility = 'visible';
+        alertPassword.style.display = 'flex';
     }
     
     if(passwordVal !== checkPassVal || checkPassVal === "") {
-        alertCheckPass.style.visibility = 'visible';
-        allCheck = 0;
+        alertCheckPass.style.display = 'flex';
+        allCheck = false;
     } else if (passwordVal === checkPassVal) {
         alertCheckPass.textContent = '비밀번호가 일치합니다!';
         alertCheckPass.style.color = 'green';
-        alertCheckPass.style.visibility = 'visible';
+        alertCheckPass.style.display = 'flex';
     }
-    if(allCheck === 1) {
+
+    if(allCheck === true) {
         signupButton.addEventListener('click', () => {
             modal.style.display = 'flex';
         });
     }
+
     closeButton.addEventListener('click', () => {
         modal.style.display = 'none';
     });
+    
+    closeBackground.addEventListener('click', () =>{
+        modal.style.display = 'none';
+    });
+
+
 };
 
 button.addEventListener('click', () => { // 버튼 클릭시만 조건부로 검사 함수 실행

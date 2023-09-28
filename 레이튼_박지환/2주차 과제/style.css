@@ -8,6 +8,16 @@ body {
 	width: 100vw;
 	height: 100vh;
 }
+
+:root {
+    /* color */
+    --modal-on:rgba(0, 0, 0, 0.6); 
+    --background-color:white;
+    --signup-background: rgb(255, 255, 255, 0.6);
+    --check-font:red;
+    --button-font:grey;
+}
+
 .background {
     display: flex;
     justify-content: center;
@@ -42,15 +52,15 @@ body {
     height: 100%;
     top: 0;
     left: 0;
-    background:rgba(0, 0, 0, 0.6); 
+    background:var(--modal-on);
     display: none;
 
 }
 
 .modal {
     text-align: center;
-    border: white;
-    background: white;
+    border: var(--background-color);
+    background:var(--background-color);
     padding: 2em;
     border-radius: 8%;
     width: 25%;
@@ -59,6 +69,10 @@ body {
 .button_wrapped {
     padding-top: 20px;
     text-align: right;
+}
+
+.input_wrapped {
+    margin-bottom: 20px;
 }
 
 .input_box {
@@ -79,7 +93,7 @@ body {
     border-radius: 5%;
     width: 40%;
     height: 95%;
-    background-color: rgb(255, 255, 255, 0.6);
+    background-color: var(--signup-background);
 }
 
 .first_h{
@@ -95,7 +109,7 @@ body {
 
 
 .input_title{
-    color: white;
+    color: var(--background-color);
     font-size: small;
 }
 
@@ -103,23 +117,23 @@ body {
     background-color: transparent;
     border-radius: 10px;
     border: solid;
-    border-color: white;
+    border-color: var(--background-color);
     width: 70%;
     height: 40px;
 }
 
 .check_validation{
-    visibility: hidden;
+    display: none;
+    position: absolute;
     font-size: 1px;
-    color: red;
-    margin-bottom: 20px;
+    color: var(--check-font);
 }
 
 .button_block {
     border: none;
-    color: aliceblue;
+    color: var(--background-color);
     border-radius: 10px;
-    background: grey;
+    background: var(--button-font);
     width: 40%;
     height: 7%;
     margin-bottom: 40px;
