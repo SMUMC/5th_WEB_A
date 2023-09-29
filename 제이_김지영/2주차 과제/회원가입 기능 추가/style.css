@@ -1,3 +1,4 @@
+/* * 및 body 스타일 설정 기본*/
 * {
   box-sizing: border-box;
   margin: 0;
@@ -27,8 +28,12 @@ body {
   align-items: center;
   background-color: white;
   opacity: 0.5;
+  /*
   width: 30%;
-  height: 40%;
+  height: 70%;
+  */
+  width: 400px;
+  height: 600px;
   border-radius: 15px 15px 15px 15px;
   gap: 10px;
 }
@@ -37,18 +42,18 @@ body {
   font-weight: bold;
   font-size: 40px;
 }
- 
+
 .hr {
-  width: 80%;
+  width: 70%;
   background-color: grey;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
 }
 
 .submit-button {
-  background-color: black;
+  background-color: rgb(73, 73, 73);
   color: white;
   width: 200px;
-  height: 40px;
+  height: 45px;
   margin: auto;
   display: block;
   font-size: 17px;
@@ -81,7 +86,17 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 16px;
+  gap: 3px;
+  margin-bottom: 0px;
+}
+
+.hidden {
+  display: none;
+  /*visibility:hidden;*/
+}
+.hidden-label {
+  /*display: none;*/
+  visibility: hidden;
 }
 
 input {
@@ -90,13 +105,44 @@ input {
   color: grey;
   background-color: transparent;
   font-size: 15px;
-  border: 1px solid grey;
-  border-left: 0;
-  border-right: 0;
-  border-top: 0;
-  outline: none;
+  border: 1.5px solid rgb(145, 134, 134);
   padding-left: 10px;
+  border-radius: 10px 10px 10px 10px;
+
+  /*position: relative;*/ /* absolute relative*/
+  display: flex;
+  text-align: left;
 }
+
+/*
+input[id="name"] {
+  position: relative;
+  top: 28px;
+
+}
+
+input[id="nickname"] {
+
+}
+
+input[id="email"] {
+  position: relative;
+  top: 28px;
+
+}
+
+input[id="pw"] {
+  position: relative;
+  top: 28px;
+
+}
+
+input[id="pw-check"] {
+  position: relative;
+  top: 28px;
+
+}
+*/
 
 input::placeholder {
   color: grey;
