@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div class="contents">
+      <h1 class="contents__title">안녕하세요!</h1>
+      <h3 class="contents__descriptions">내용내용내용</h3>
+      <button 
+        id="modalOpenButton" 
+        class="contents__modal-button"
+        onClick="openModal()"
+      >버튼 열기</button>
+    </div>
+
+    <div 
+      id="modalBackground" 
+      class="modal-contianer__background"
+      style="
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.8);
+      ">
+      <div class="modal-contianer">
+        <div class="modal-contianer__modal">
+          <h3 class="modal-contianer__title">안녕하세요</h3>
+          <h3 class="modal-contianer__descriptions">모달 내용은 어쩌고 저쩌고..</h3>
+          <button 
+            id="modalCloseButton" 
+            class="modal-contianer__close"
+            style="
+              display: flex;
+              align-self: flex-end;
+            ";
+          >닫기</button>
+        </div>
+      </div>
+    </div>
+
+
+  </body>
+
+  <script>
+    const openButtonElement = document.getElementById("modalOpenButton");
+    const closeButtonElement = document.getElementById("modalCloseButton");
+    const ModalElement = document.getElementById("modalBackground");
+    let isClicked = false;
+
+    function openModal() {
+      if (!isClicked) {
+        ModalElement.style.display = "block";
+        isClicked = true;
+      }
+    }
+
+    function closeModal() {
+      if (isClicked) {
+        ModalElement.style.display = "none";
+        isClicked = false;
+      }
+    }
+    openButtonElement.addEventListener("click", function() {
+      openModal();
+    });
+    closeButtonElement.addEventListener("click", function() {
+      closeModal();
+    });
+  </script>
+</html>

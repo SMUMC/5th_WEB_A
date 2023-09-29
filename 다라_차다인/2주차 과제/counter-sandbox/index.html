@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <h2 id="value">0</h2>
+    <button id="plus">+1</button>
+    <button id="minus">-1</button>
+  </body>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const element = document.getElementById("value");
+        let number = parseInt(element.innerText);
+
+        const buttonElements = document.getElementsByTagName ('button');
+
+        for (let i = 0; i < buttonElements.length; i++) {
+        buttonElements[i].addEventListener("click", function(event) {
+            if (event.target.id === "plus") {
+            number += 1;
+            console.log("plus 가 클릭됨");
+            }
+            else if (event.target.id === "minus") {
+            number -= 1;
+            console.log("minus 가 클릭됨");
+            }
+            element.innerText = number;
+        });
+        }
+
+        const h2Element = document.querySelector("h2");
+        const plusButton = document.getElementById("plus");
+        const minusButton = document.getElementById("minus");
+
+        console.log(h2Element.outerHTML);
+        console.log(plusButton.outerHTML);
+        console.log(minusButton.outerHTML);
+    });
+  </script>
+</html>
