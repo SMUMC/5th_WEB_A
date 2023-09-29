@@ -144,7 +144,7 @@ function passwordRule(value) {
 } 
 
 function passwordCheck(value1) {
-    if (value1 == "") {
+    if (value1 == "" || value1 == null) {
         pw_check3.classList.add('hidden');
         pw_check2.classList.add('hidden');
     }
