@@ -1,6 +1,6 @@
 
 import { moviesData, MovieList } from "./Movie.js";
-import { useEffect, useState } from "react";
+//import { useEffect, useState } from "react";
 
 function App() {
   /*
@@ -14,8 +14,8 @@ function App() {
   }, [keyword]);
   */
 
-  const [loading, setLoading] = useState(true); 
-  const [movies, setMovies] = useState([]);
+  //const [loading, setLoading] = useState(true); 
+  //const [movies, setMovies] = useState([]);
   /*
 	const getMovies = async () => {
 		const json = await (
@@ -39,7 +39,7 @@ function App() {
       <button onClick={onClick}>Click Me!</button>
       <input value={keyword} onChange={onChange} type="text" placeholder="Search here..."/>
       */}
-      <h1>영화 목록</h1>
+      <h1 className="page-title">NETFLIX</h1>
       <MovieList movies={moviesData} /> {/* Use the MovieList component */}
       {/*
       {loading ? (

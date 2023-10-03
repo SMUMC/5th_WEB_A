@@ -402,17 +402,24 @@ const moviesData = {
 
 function MovieList({ movies }) {
 	return (
-	  <div>
+	  <div className ="movie-zip">
 		{movies.results.map((movie) => (
-		  <div key={movie.id}>
-			<img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
-			<h2>{movie.title}</h2>
+		  <div 
+		  key={movie.id}
+		  className="movie-container">
+			<img 
+			src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
+			alt={movie.title} 
+			className= "movie-image" />
+			<b><p className="movie-title">{movie.title}</p></b>
+			{/*
 			<p>{movie.overview}</p>
 			<ul>
 			  {movie.genre_ids.map((genreId) => (
 				<li key={genreId}>{genreId}</li>
 			  ))}
 			</ul>
+			*/}
 		  </div>
 		))}
 	  </div>
