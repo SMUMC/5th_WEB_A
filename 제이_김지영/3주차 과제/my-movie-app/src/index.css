@@ -63,3 +63,23 @@ code {
   align-items: center;
   color:azure;
 }
+
+.movie-overview {
+  color:azure;
+  font-size: x-small;
+  margin: 8px;
+}
+
+.overview-container {
+  width: 165px; 
+  height: 295px; 
+  background-color: rgb(52, 42, 92);
+  opacity: 90%;
+  position: absolute; /*overview-container가 movie-container위에 겹치도록*/
+  display: none; /*hide overview-container*/
+  overflow: hidden; /*내용이 넘치면 숨기기*/
+}
+
+.movie-container:hover .overview-container{
+  display: block; /*movie-container 위에 마우스 가져가면(hover) show overview-container*/
+}

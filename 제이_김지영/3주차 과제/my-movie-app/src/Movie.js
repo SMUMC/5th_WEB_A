@@ -407,13 +407,16 @@ function MovieList({ movies }) {
 		  <div 
 		  key={movie.id}
 		  className="movie-container">
+			<div className="overview-container" >
+				<b><p className="movie-title">{movie.title}</p></b>
+				<p className="movie-overview">{movie.overview}</p>
+			</div>
 			<img 
 			src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
 			alt={movie.title} 
 			className= "movie-image" />
 			<b><p className="movie-title">{movie.title}</p></b>
 			{/*
-			<p>{movie.overview}</p>
 			<ul>
 			  {movie.genre_ids.map((genreId) => (
 				<li key={genreId}>{genreId}</li>
