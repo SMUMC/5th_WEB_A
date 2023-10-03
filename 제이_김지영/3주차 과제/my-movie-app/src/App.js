@@ -1,5 +1,5 @@
 
-//import movies from './Movie.js';
+import { moviesData, MovieList } from "./Movie.js";
 import { useEffect, useState } from "react";
 
 function App() {
@@ -16,6 +16,7 @@ function App() {
 
   const [loading, setLoading] = useState(true); 
   const [movies, setMovies] = useState([]);
+  /*
 	const getMovies = async () => {
 		const json = await (
 			await fetch(
@@ -29,6 +30,7 @@ function App() {
   useEffect(() => {
     getMovies();
   }, []);
+  */
 
   return (
     <div>
@@ -37,6 +39,9 @@ function App() {
       <button onClick={onClick}>Click Me!</button>
       <input value={keyword} onChange={onChange} type="text" placeholder="Search here..."/>
       */}
+      <h1>영화 목록</h1>
+      <MovieList movies={moviesData} /> {/* Use the MovieList component */}
+      {/*
       {loading ? (
         <span className='msg-loading'>Loading...</span>
       ) : (
@@ -53,6 +58,7 @@ function App() {
           </div>
         ))
       )}
+      */}
     </div>
   );
 }
