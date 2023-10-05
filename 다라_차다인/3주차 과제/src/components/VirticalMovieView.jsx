@@ -1,76 +1,28 @@
-import React, { useEffect, useState } from "react";
-import styled from "styled-components";
+import React, { useState } from "react";
+import * as S from "../styles/VirticalMovieView.styled";
 
-const VirticalMovieView = ({poster, title, star, detail}) => {
+const VirticalMovieView = ({poster, title, Star, detail}) => {
     const [mouse, setMouse] = useState(false);
 
     return (
-        <Contianer
+        <S.Contianer
             onMouseEnter={() => {setMouse(true)}}
             onMouseLeave={() => {setMouse(false)}}
         >
-            <Poster src={poster}></Poster>
-            <DescriptionContainer>
-                <Title>{title}</Title>
-                <Star>{star}</Star>
-            </DescriptionContainer>
+            <S.Poster src={poster}></S.Poster>
+            <S.DescriptionContainer>
+                <S.Title>{title}</S.Title>
+                <S.Star>{Star}</S.Star>
+            </S.DescriptionContainer>
 
-            <DetailContents
+            <S.DetailContents
                 style={{visibility : mouse ? "visible" : "hidden"}}
             >
-                <Title>{title}</Title>
-                <DetailText>{detail.slice(0, 300)}...</DetailText>
-            </DetailContents>
-        </Contianer>
+                <S.Title>{title}</S.Title>
+                <S.DetailText>{detail.slice(0, 100)}...</S.DetailText>
+            </S.DetailContents>
+        </S.Contianer>
     );
 }
-
-const Contianer = styled.div`
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    width: 200px;
-`;
-
-const Poster = styled.img`
-    display: flex;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-`;
-
-const DescriptionContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-    height: 70px;
-    justify-content: space-between;
-    padding: 10px;
-    background-color: #373B69;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-`;
-
-const Title = styled.p`
-    display: flex;
-    font-size: 13px;
-    color: white;
-`;
-
-const Star = styled(Title)``;
-
-const DetailText = styled(Title)``;
-
-const DetailContents = styled.div`
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 160px;
-    height: 90%;
-    padding: 20px;
-    background-color: black;
-    opacity: 0.8;
-    border-radius: 5px;
-`;
 
 export default VirticalMovieView;
