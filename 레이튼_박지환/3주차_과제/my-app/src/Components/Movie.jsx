@@ -1,6 +1,3 @@
-import React from "react";
-
-
 const IMAGE_URL = "https://image.tmdb.org/t/p/w1280/";
 
 function Movie({title, posterPath, voteAverage}) {

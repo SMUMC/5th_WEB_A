@@ -1,6 +1,7 @@
-import Movie from "./Movie"; // App.js는 사실상 최상위 컴포넌트임
+import { useState } from "react"; // import react는 hook쓸 때만 쓰면 된다.
+
+import Movie from "./Movie";
 import MovieDesc from "./MovieDesc";
-import { useState } from "react";
 
 function MovieContainer({film}) { // film을 각각 받아온다.
 
@@ -20,7 +21,7 @@ function MovieContainer({film}) { // film을 각각 받아온다.
         <div
             className="container" onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
             <Movie title={title} posterPath={poster_path} voteAverage={vote_average} />
-            {isHovering ? <MovieDesc title={title} description={overview} /> : ""}
+            {isHovering && <MovieDesc title={title} description={overview} />  }
         </div>
     );
 }

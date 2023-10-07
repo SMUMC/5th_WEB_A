@@ -16,21 +16,39 @@ body {
     background-color: var(--main-color);
 }
 
+
+
 .app_container {
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    
+    /* grid 속성을 많이 써보자, 전체 스타일링 할 때는 최상위 요소에 주는게 좋다 더 직관적 */
+    display: grid; 
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 1rem;
+    place-items: center;
+    padding: 12px;
+
+}
+
+@media screen and (max-width: 768px) {
+    .app_container { 
+        grid-template-columns: repeat(3, 1fr);
+    }
+    /* 미디어 쿼리로 스타일 줘서 반응형으로 만들어짐 */
+}
+
+@media screen and (max-width: 320px) {
+    .app_container {
+        grid-template-columns: repeat(1, 1fr);
+        place-items: center;
+    }
 }
 
 .container {
     height: 385px;
     width: 220px;
-    margin: 10px;
     position: relative;
 }
 
 .movies {
-    margin: 10px;
     width: 220px;
     top: 0;
     left: 0;
@@ -57,13 +75,13 @@ body {
 
 
 .descript_container {
+    padding-top: 0;
     color: white;
     height: 385px;
-    margin: 10px;
     width: 220px;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.6);;
+    background-color: rgba(0, 0, 0, 0.6);
     position: relative;
 }
 .descript_container h5 {
@@ -71,6 +89,5 @@ body {
     padding: 20px;
 }
 .descript_container p {
-    margin: 10px;
     font-size: 8px;
 }
