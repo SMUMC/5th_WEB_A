@@ -8,6 +8,7 @@ import {
   TopRatedPage,
   UpComingPage,
 } from './pages';
+import { Loading } from './components';
 
 // loaders
 import { loader as mainLoader } from './pages/MainPage/MainPage';
@@ -46,7 +47,7 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  return <RouterProvider router={router} />;
+  return <RouterProvider router={router} fallbackElement={<Loading />} />;
 }
 
 export default App;

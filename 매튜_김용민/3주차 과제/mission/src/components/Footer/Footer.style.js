@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const Wrapper = styled.footer`
-  height: 200px;
+  height: 20vh;
   background-color: #000080;
   display: flex;
   flex-direction: column;

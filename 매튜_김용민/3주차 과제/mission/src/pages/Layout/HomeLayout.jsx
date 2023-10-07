@@ -1,13 +1,15 @@
-import { Outlet } from 'react-router-dom';
-import Navbar from '../../components/Navbar/Navbar';
-import Footer from '../../components/Footer/Footer';
+import { Outlet, useNavigation } from 'react-router-dom';
+import { Footer, Loading, Navbar } from '../../components/index';
+
 import * as S from './HomeLayout.style';
 
 const HomeLayout = () => {
+  const navigation = useNavigation();
+  const isPageLoading = navigation.state === 'loading';
   return (
     <S.Container>
       <Navbar />
-      <Outlet />
+      {isPageLoading ? <Loading /> : <Outlet />}
       <Footer />
     </S.Container>
   );

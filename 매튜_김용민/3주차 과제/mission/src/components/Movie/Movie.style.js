@@ -7,6 +7,7 @@ const Wrapper = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
 
   &:hover {
     cursor: pointer;
@@ -17,7 +18,6 @@ const Wrapper = styled.section`
 const ImageContainer = styled.div`
   width: 100%;
   height: 100%;
-  position: relative;
 `;
 
 const Image = styled.img`

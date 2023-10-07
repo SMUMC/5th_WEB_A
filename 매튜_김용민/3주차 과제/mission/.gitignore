@@ -28,3 +28,6 @@ dist-ssr
 
 # API_KEY
 .env
+
+# folder
+.history/
