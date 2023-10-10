@@ -1,14 +1,29 @@
 import { useState } from 'react';
 import * as S from './Movie.style.js';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Movie = (props) => {
-  const { poster_path, title, vote_average, overview } = props.movieData;
+  const navigate = useNavigate();
+  const { poster_path, title, vote_average, overview, original_title } =
+    props.movieData;
   const [isHover, setIsHover] = useState(false);
+  const handleMoveDetailPage = () => {
+    navigate(`/movie/${original_title}`, {
+      state: {
+        poster_path,
+        title,
+        vote_average,
+        overview,
+        original_title,
+      },
+    });
+  };
   return (
     <>
       <S.Wrapper
         onMouseEnter={() => setIsHover(true)}
         onMouseLeave={() => setIsHover(false)}
+        onClick={handleMoveDetailPage}
       >
         <S.ImageContainer>
           <S.Image

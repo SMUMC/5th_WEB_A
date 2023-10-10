@@ -7,11 +7,13 @@ import {
   NowPlayingPage,
   TopRatedPage,
   UpComingPage,
+  PopularPage,
+  MovieDetailPage,
 } from './pages';
 import { Loading } from './components';
 
 // loaders
-import { loader as mainLoader } from './pages/MainPage/MainPage';
+import { loader as popularLoader } from './pages/PopularPage/PopularPage';
 import { loader as nowPlayingLoader } from './pages/NowPlayingPage/NowPlayingPage';
 import { loader as topRatedLoader } from './pages/TopRated/TopRatedPage';
 import { loader as upComingLoader } from './pages/UpComing/UpComingPage';
@@ -20,27 +22,41 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <HomeLayout />,
-    error: <ErrorPage />,
+    errorElement: <ErrorPage />,
     children: [
       {
         index: true,
         element: <MainPage />,
-        loader: mainLoader,
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: 'popular',
+        element: <PopularPage />,
+        loader: popularLoader,
+        errorElement: <ErrorPage />,
       },
       {
         path: 'nowplaying',
         element: <NowPlayingPage />,
         loader: nowPlayingLoader,
+        errorElement: <ErrorPage />,
       },
       {
         path: 'toprated',
         element: <TopRatedPage />,
         loader: topRatedLoader,
+        errorElement: <ErrorPage />,
       },
       {
         path: 'upcoming',
         element: <UpComingPage />,
         loader: upComingLoader,
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: 'movie/:title',
+        element: <MovieDetailPage />,
+        errorElement: <ErrorPage />,
       },
     ],
   },

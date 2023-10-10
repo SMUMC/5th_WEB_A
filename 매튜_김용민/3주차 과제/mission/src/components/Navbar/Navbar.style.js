@@ -19,6 +19,16 @@ const Logo = styled(Link)`
   cursor: pointer;
 `;
 
+const LoginButton = styled.button`
+  width: 100px;
+  height: 40px;
+  background-color: transparent;
+  color: white;
+  border: none;
+
+  cursor: pointer;
+`;
+
 const MainNav = styled.ul`
   list-style: none;
   display: flex;
@@ -41,4 +51,4 @@ const NavLink = styled(Link)`
   }
 `;
 
-export { NavbarContainer, Logo, MainNav, NavLi, NavLink };
+export { NavbarContainer, LoginButton, Logo, MainNav, NavLi, NavLink };

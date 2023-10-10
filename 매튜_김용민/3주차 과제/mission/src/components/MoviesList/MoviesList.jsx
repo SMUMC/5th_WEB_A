@@ -8,6 +8,7 @@ const MoviesList = () => {
   // const { results: films } = movies;
 
   const { results: films } = useLoaderData();
+  console.log(films);
 
   return (
     <S.Wrapper>
