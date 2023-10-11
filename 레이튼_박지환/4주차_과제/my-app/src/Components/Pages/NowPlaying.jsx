@@ -26,15 +26,13 @@ export default function NowPlaying() {
         setLoad(false);
       } catch (error) {
         console.error(error);
+        setLoad(false);
       }
     };
     fetchNowPlaying();
-  }, []);
+  }, []); // mount시 리렌더링
 
   return (
-    <>
-      {isLoading && <LoadingSpinner />}
-      <MovieList films={now_playing} />
-    </>
+    <>{isLoading ? <LoadingSpinner /> : <MovieList films={now_playing} />};</>
   );
 }

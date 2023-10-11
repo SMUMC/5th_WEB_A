@@ -31,10 +31,5 @@ export default function Popular() {
     fetchPopular();
   }, []);
 
-  return (
-    <>
-      {isLoading && <LoadingSpinner />}
-      <MovieList films={pupular} />;
-    </>
-  );
+  return <>{isLoading ? <LoadingSpinner /> : <MovieList films={pupular} />};</>;
 }

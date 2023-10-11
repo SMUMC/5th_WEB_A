@@ -31,9 +31,6 @@ export default function Upcoming() {
     fetchUpcoming();
   }, []);
   return (
-    <>
-      {isLoading && <LoadingSpinner />}
-      <MovieList films={upcoming} />;
-    </>
+    <>{isLoading ? <LoadingSpinner /> : <MovieList films={upcoming} />};</>
   );
 }

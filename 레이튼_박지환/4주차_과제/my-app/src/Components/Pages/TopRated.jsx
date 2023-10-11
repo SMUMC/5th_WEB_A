@@ -31,9 +31,6 @@ export default function TopRated() {
     fetchPopular();
   }, []);
   return (
-    <>
-      {isLoading && <LoadingSpinner />}
-      <MovieList films={topRated} />;
-    </>
+    <>{isLoading ? <LoadingSpinner /> : <MovieList films={topRated} />};</>
   );
 }
