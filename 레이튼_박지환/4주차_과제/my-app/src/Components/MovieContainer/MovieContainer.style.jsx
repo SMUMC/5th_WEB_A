@@ -7,8 +7,3 @@ const MovieContainerStyle = styled.div`
 `;
 
 export { MovieContainerStyle };
-// .container {
-//   height: 385px;
-//   width: 220px;
-//   position: relative;
-// }

@@ -24,25 +24,3 @@ const MoviesInfoStyle = styled.div`
 `;
 
 export { MoviesStyle, MoviesImgStyle, MoviesInfoStyle };
-// .movies {
-//   width: 220px;
-//   top: 0;
-//   left: 0;
-//   position: absolute;
-//   background-color: var(--box-color);
-//   color: var(--font-color);
-// }
-
-// .movies_info {
-//   display: flex;
-//   align-items: center;
-//   padding: 25px;
-//   margin: 0;
-//   height: 80px;
-//   justify-content: space-between;
-// }
-
-// .movies_img {
-//   width: 100%;
-//   height: 300px;
-// }

@@ -1,5 +1,4 @@
 import { useState } from "react"; // import react는 hook쓸 때만 쓰면 된다.
-
 import Movie from "../Movie/Movie";
 import MovieDesc from "../MovieDesc/MovieDesc";
 import { MovieContainerStyle } from "./MovieContainer.style";
