@@ -1,10 +1,12 @@
-import { Background, Text, Loader } from "./LoadingSpinner.style";
+import { Background, Text } from "./LoadingSpinner.style";
+import Spinner from "../../Assets/spinner.gif";
 
 export default function LoadingSpinner() {
   return (
     <Background>
       <Text>Wait a second!</Text>
-      <Loader />
+      <img src={Spinner} alt="" />
+      {/* <Loader /> */}
     </Background>
   );
 }
