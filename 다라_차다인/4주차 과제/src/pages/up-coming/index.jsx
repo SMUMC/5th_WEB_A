@@ -9,8 +9,8 @@ const customGetDataProps = {
   page: "1",
 };
 
-export const loader = () => {
-  const datam = customGetData(customGetDataProps);
+export const loader = async () => {
+  const datam = await customGetData(customGetDataProps);
   return datam;
 };
 

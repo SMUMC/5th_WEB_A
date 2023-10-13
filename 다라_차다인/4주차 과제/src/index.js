@@ -28,22 +28,22 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/popular", 
+        path: "popular", 
         element: <Popular />,
         loader: getPopularMovie,
       },  
       {
-        path: "/nowplaying", 
+        path: "nowplaying", 
         element: <Nowplaying />,
         loader: getNowPlayingMovie,
       },
       {
-        path: "/toprated", 
+        path: "toprated", 
         element: <TopRated />,
         loader: getTopRatedMovie,
       },      
       {
-        path: "/upcoming", 
+        path: "upcoming", 
         element: <UpComing />,
         loader: getUpComing,
       },

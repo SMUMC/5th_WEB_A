@@ -27,6 +27,14 @@ export const DescriptionContainer = styled.div`
     p {
         font-size: 13px;
         color: white;
+
+        text-overflow: ellipsis;
+        overflow: hidden;
+        word-break: break-word;
+         
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
     }
 `;
 
@@ -44,12 +52,24 @@ export const DetailContents = styled.div`
     border-radius: 5px;
 
     p {
-        padding: 10px 0px;
         font-size: 13px;
-        color: white;
+        color: white;  
     }
-
     ${Container}:hover & {
         display: block;
+    }
+`;
+
+export const DetailLayout = styled.div`
+    margin-top: 10px;
+
+    p {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        word-break: break-word;
+         
+        display: -webkit-box;
+        -webkit-line-clamp: 10;
+        -webkit-box-orient: vertical;
     }
 `;

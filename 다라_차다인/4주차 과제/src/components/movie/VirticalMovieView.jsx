@@ -9,13 +9,15 @@ const VirticalMovieView = (props) => {
         <S.Container>
             <S.Poster src={ImgUrl + poster_path}></S.Poster>
             <S.DescriptionContainer>
-                <p>{original_title.slice(0, 20)}</p>
+                <p>{original_title}</p>
                 <p>⭐ {vote_average}</p>
             </S.DescriptionContainer>
 
             <S.DetailContents>
                 <p>{original_title}</p>
-                <p>{overview.slice(0, 100)}...</p>
+                <S.DetailLayout>
+                    <p>{overview}</p>
+                </S.DetailLayout>
             </S.DetailContents>
         </S.Container>
     );
