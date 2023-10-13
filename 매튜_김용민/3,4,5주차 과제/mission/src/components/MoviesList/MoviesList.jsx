@@ -2,13 +2,9 @@ import { useLoaderData } from 'react-router-dom';
 
 import Movie from '../Movie/Movie';
 import * as S from './MoviesList.style';
-// import { movies } from '../../constants/Movies';
 
 const MoviesList = () => {
-  // const { results: films } = movies;
-
-  const { results: films } = useLoaderData();
-  console.log(films);
+  const films = useLoaderData();
 
   return (
     <S.Wrapper>

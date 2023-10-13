@@ -3,6 +3,7 @@ import * as S from './MovieDetailPage.style';
 
 const MovieDetailPage = () => {
   const location = useLocation();
+
   const { poster_path, title, vote_average, overview, original_title } =
     location.state;
 
