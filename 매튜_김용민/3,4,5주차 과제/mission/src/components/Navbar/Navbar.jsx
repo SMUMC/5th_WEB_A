@@ -15,16 +15,16 @@ const Navbar = () => {
           <h1>{isLogin ? '로그아웃' : '로그인'}</h1>
         </S.LoginButton>
         <S.NavLi>
-          <S.NavLink to='/popular'>Popular</S.NavLink>
+          <S.NavMenu to='/popular'>Popular</S.NavMenu>
         </S.NavLi>
         <S.NavLi>
-          <S.NavLink to='/nowplaying'>Now Playing</S.NavLink>
+          <S.NavMenu to='/nowplaying'>Now Playing</S.NavMenu>
         </S.NavLi>
         <S.NavLi>
-          <S.NavLink to='/toprated'>Top Rated</S.NavLink>
+          <S.NavMenu to='/toprated'>Top Rated</S.NavMenu>
         </S.NavLi>
         <S.NavLi>
-          <S.NavLink to='/upcoming'>Upcoming</S.NavLink>
+          <S.NavMenu to='/upcoming'>Upcoming</S.NavMenu>
         </S.NavLi>
       </S.MainNav>
     </S.NavbarContainer>

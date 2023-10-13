@@ -10,6 +10,7 @@ import {
   PopularPage,
   MovieDetailPage,
 } from './pages';
+
 import { Loading } from './components';
 
 // loaders

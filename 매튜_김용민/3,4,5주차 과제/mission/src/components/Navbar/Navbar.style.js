@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const NavbarContainer = styled.nav`
   box-sizing: border-box;
@@ -12,7 +12,7 @@ const NavbarContainer = styled.nav`
   padding: 20px 40px;
 `;
 
-const Logo = styled(Link)`
+const Logo = styled(NavLink)`
   font-size: 2rem;
   color: gold;
   text-decoration: none;
@@ -42,13 +42,20 @@ const NavLi = styled.li`
   }
 `;
 
-const NavLink = styled(Link)`
+const NavMenu = styled(NavLink)`
   text-decoration: none;
-  color: gold;
+  color: white;
+
+  &.active {
+    font-weight: 800;
+    color: gold;
+    border-bottom: 2px solid gold;
+    margin-top: 3px;
+  }
 
   @media (min-width: 768px) {
     margin: 0px 10px;
   }
 `;
 
-export { NavbarContainer, LoginButton, Logo, MainNav, NavLi, NavLink };
+export { NavbarContainer, LoginButton, Logo, MainNav, NavLi, NavMenu };
