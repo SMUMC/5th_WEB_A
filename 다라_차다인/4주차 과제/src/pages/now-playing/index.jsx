@@ -1,36 +1,23 @@
 import React from "react";
-import { useLoaderData } from "react-router-dom";
-import { movieDummy } from "../../api/movie/movieDummy";
+import { customGetData } from "../../api/customGetData";
 import * as S from  "./NowPlaying.styled";
-import VirticalMovieView from "../../components/movie/VirticalMovieView";
+import { MovieList } from "../movieList";
+
+const customGetDataProps = {
+  type: "now_playing",
+  language: "ko-KR",
+  page: "1",
+};
 
 export const loader = () => {
-    return movieDummy().then((res) => {
-      if (res) {
-        return res;
-      } else {
-        return null;
-      }
-    });
+  const datam = customGetData(customGetDataProps);
+  return datam;
 };
 
 export const Nowplaying = () => {
-    const movieData = useLoaderData();
-
     return (
       <S.Contaier>
-        <S.MovieListContainer>
-          {movieData && movieData.map((item) => (
-              <VirticalMovieView
-                key={item.id}
-                poster={process.env.REACT_APP_POSTER_BASE_URL + item.poster_path} 
-                title={item.original_title}
-                star={item.vote_average}
-                detail={item.overview}
-              />
-            )
-          )}
-        </S.MovieListContainer>
+        <MovieList />
       </S.Contaier>
   );
 }

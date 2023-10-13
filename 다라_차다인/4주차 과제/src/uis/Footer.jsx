@@ -4,12 +4,14 @@ import * as S from "./styles/Footer.styled";
 const Footer = () => {
     return (
         <S.Container>
-            <S.Contents>github__</S.Contents>
-            <S.Contents onClick={() => 
-                window.open("https://github.com/daindaind")
-            }>
-                 https://github.com/daindaind
-            </S.Contents>
+            <p>github__</p>
+            <S.LinkLayout 
+                to="https://github.com/daindaind" 
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                https://github.com/daindaind
+            </S.LinkLayout>
         </S.Container>
     );
 }

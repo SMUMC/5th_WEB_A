@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 
 export const Container = styled.div`
     position: fixed;
@@ -10,31 +11,38 @@ export const Container = styled.div`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 30px 20px;
     height: 30px;
     background-color: #1a1c3a;
 `;
 
-export const MenuContianer = styled.div`
+export const MenuContainer = styled.div`
     display: flex;
     gap: 30px;
 `;
 
-export const Title = styled.h1`
+export const Title = styled(NavLink)`
     display: flex;
     font-size: 20px;
     color: white;
     cursor: pointer;
+    text-decoration-line : none;
 `;
 
-export const Contents = styled.p`
+export const Contents = styled(NavLink)`
     display: flex;
     font-size: 16px;
     color: white;
     cursor: pointer;
+    text-decoration-line : none;
 
     &:hover {
         font-size: 17px;
+        font-weight: 800;
+    }
+
+    &.active {
+        color: #FFCD28;
         font-weight: 800;
     }
 `;

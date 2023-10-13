@@ -1,27 +1,23 @@
-import React, { useState } from "react";
+import React from "react";
 import * as S from "./VirticalMovieView.styled";
 
-const VirticalMovieView = ({poster, title, star, detail}) => {
-    const [mouse, setMouse] = useState(false);
+const VirticalMovieView = (props) => {
+    const ImgUrl = process.env.REACT_APP_POSTER_BASE_URL;
+    const { poster_path, original_title, vote_average, overview } = props.movieData;
 
     return (
-        <S.Contianer
-            onMouseEnter={() => {setMouse(true)}}
-            onMouseLeave={() => {setMouse(false)}}
-        >
-            <S.Poster src={poster}></S.Poster>
+        <S.Container>
+            <S.Poster src={ImgUrl + poster_path}></S.Poster>
             <S.DescriptionContainer>
-                <S.Title>{title}</S.Title>
-                <S.Star>⭐ {star}</S.Star>
+                <p>{original_title.slice(0, 20)}</p>
+                <p>⭐ {vote_average}</p>
             </S.DescriptionContainer>
 
-            <S.DetailContents
-                style={{visibility : mouse ? "visible" : "hidden"}}
-            >
-                <S.Title>{title}</S.Title>
-                <S.DetailText>{detail.slice(0, 100)}...</S.DetailText>
+            <S.DetailContents>
+                <p>{original_title}</p>
+                <p>{overview.slice(0, 100)}...</p>
             </S.DetailContents>
-        </S.Contianer>
+        </S.Container>
     );
 }
 

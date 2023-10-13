@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Contianer = styled.div`
+export const Container = styled.div`
     display: flex;
     position: relative;
     flex-direction: column;
@@ -23,28 +23,33 @@ export const DescriptionContainer = styled.div`
     background-color: #373B69;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
+
+    p {
+        font-size: 13px;
+        color: white;
+    }
 `;
-
-export const Title = styled.p`
-    display: flex;
-    font-size: 13px;
-    color: white;
-`;
-
-export const Star = styled(Title)``;
-
-export const DetailText = styled(Title)``;
 
 export const DetailContents = styled.div`
-    display: flex;
+    display: none;
     flex-direction: column;
     position: absolute;
     top: 0px;
     left: 0px;
-    width: 160px;
-    height: 90%;
+    width: 100%;
+    height: 100%;
     padding: 20px;
     background-color: black;
     opacity: 0.8;
     border-radius: 5px;
+
+    p {
+        padding: 10px 0px;
+        font-size: 13px;
+        color: white;
+    }
+
+    ${Container}:hover & {
+        display: block;
+    }
 `;

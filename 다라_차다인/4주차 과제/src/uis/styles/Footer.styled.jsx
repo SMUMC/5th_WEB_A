@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Container = styled.div`
     position: fixed;
@@ -9,14 +10,20 @@ export const Container = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 10px 20px;
+    padding: 20px 20px;
     height: 30px;
     background-color: #1a1c3a;
+
+    p {
+        font-size: 14px;
+        color: white;
+    }
 `;
 
-export const Contents = styled.p`
+export const LinkLayout = styled(Link)`
     display: flex;
     font-size: 14px;
     color: white;
     cursor: pointer;
+    text-decoration-line: none;
 `;

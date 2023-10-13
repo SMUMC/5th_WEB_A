@@ -1,11 +1,17 @@
-import { loader as movieDummy } from './now-playing/index';
-import { loader as getPopularMovie } from './popular/index';
-import { loader as getTopRatedMovie } from './top-rated/index';
-import { loader as getUpComing } from './up-coming/index';
+import { Nowplaying } from './now-playing/index';
+import { Popular } from './popular/index';
+import { TopRated } from './top-rated/index';
+import { UpComing } from './up-coming/index';
+import ErrorPage from './error/ErrorPage';
+import Loading from './loading/Loading';
+import { Home } from './home/index';
 
 export {
-    movieDummy,
-    getPopularMovie,
-    getTopRatedMovie,
-    getUpComing,
+    Nowplaying,
+    Popular,
+    TopRated,
+    UpComing,
+    ErrorPage,
+    Loading,
+    Home
 };

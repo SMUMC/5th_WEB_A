@@ -2,46 +2,52 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import { Nowplaying } from './pages/now-playing';
-import { Popular } from './pages/popular';
-import { TopRated } from './pages/top-rated';
-import { UpComing } from './pages/up-coming';
-import ErrorPage from './pages/error/ErrorPage';
-import Loading from './pages/loading/Loading';
-import * as loaders from './pages/index';
-
-import { 
-  createBrowserRouter, 
-  RouterProvider,
-} from "react-router-dom";
-
+import { loader as getNowPlayingMovie } from './pages/now-playing/index';
+import { loader as getPopularMovie } from './pages/popular/index';
+import { loader as getTopRatedMovie } from './pages/top-rated/index';
+import { loader as getUpComing } from './pages/up-coming/index';
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {    
+  Nowplaying,
+  Popular,
+  TopRated,
+  UpComing,
+  ErrorPage,
+  Loading,
+  Home 
+} from "./pages/index";
+  
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    errorElement: <ErrorPage />,
     children: [
-      { index: true, 
-        path: "/", 
+      {
+        index: true,
+        element: <Home />,
+      },
+      {
+        path: "/popular", 
         element: <Popular />,
-        loader: loaders.getPopularMovie,
-      },   //main page
-      { index: true, 
+        loader: getPopularMovie,
+      },  
+      {
         path: "/nowplaying", 
         element: <Nowplaying />,
-        loader: loaders.movieDummy,
+        loader: getNowPlayingMovie,
       },
-      { index: true, 
+      {
         path: "/toprated", 
         element: <TopRated />,
-        loader: loaders.getTopRatedMovie,
+        loader: getTopRatedMovie,
       },      
-      { index: true, 
+      {
         path: "/upcoming", 
         element: <UpComing />,
-        loader: loaders.getUpComing,
+        loader: getUpComing,
       },
     ],
-    errorElement: <ErrorPage />,
   }
 ]);
 
