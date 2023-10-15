@@ -1,7 +1,7 @@
 import { useState } from "react"; // import react는 hook쓸 때만 쓰면 된다.
-
-import Movie from "./Movie";
-import MovieDesc from "./MovieDesc";
+import Movie from "../Movie/Movie";
+import MovieDesc from "../MovieDesc/MovieDesc";
+import { MovieContainerStyle } from "./MovieContainer.style";
 
 function MovieContainer({ film }) {
   // film을 각각 받아온다.
@@ -19,8 +19,7 @@ function MovieContainer({ film }) {
   const { title, poster_path, vote_average, overview } = film;
 
   return (
-    <div
-      className="container"
+    <MovieContainerStyle
       onMouseOver={handleMouseOver}
       onMouseOut={handleMouseOut}
     >
@@ -30,7 +29,7 @@ function MovieContainer({ film }) {
         voteAverage={vote_average}
       />
       {isHovering && <MovieDesc title={title} description={overview} />}
-    </div>
+    </MovieContainerStyle>
   );
 }
 
