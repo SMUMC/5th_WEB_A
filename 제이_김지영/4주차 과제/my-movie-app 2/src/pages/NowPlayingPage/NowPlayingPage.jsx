@@ -1,39 +1,12 @@
-import { useEffect, useState } from 'react';
+
+import { CustomFetch } from "../../hooks/fetchData";
 import MovieList from '../../Components/MovieList/MovieList';
 import Loading from '../../Components/Loading/Loading';
-import * as S from './NowPlayingPage.styled';
 
-function NowPlayingPage() {
-  const [isLoading, setIsLoading] = useState(true);
-  const [movies, setMovies] = useState([]);
-  const getMovies = async () => {
-    const url =
-      'https://api.themoviedb.org/3/movie/now_playing?language=ko-KR&page=4';
-    const options = {
-      method: 'GET',
-      headers: {
-        accept: 'application/json',
-        Authorization: `Bearer ${process.env.REACT_APP_MOVIE_TOKEN}`,
-      },
-    };
-    fetch(url, options)
-      .then((res) => res.json())
-      .then((res) => {
-        setMovies(res.results);
-        setIsLoading(false);
-      })
-      .catch((err) => console.error('error:' + err));
-  };
+export default function NowPlaying() {
+  const { isData, isLoading } = CustomFetch("now_playing");
 
-  useEffect(() => {
-    getMovies();
-  }, []);
+  const films = Array.isArray(isData) ? isData : [];
 
-  return (
-    <S.Container>
-      { isLoading ? <Loading /> : <MovieList films={movies} /> }
-    </S.Container>
-  );
+  return <>{isLoading ? <Loading /> : <MovieList films={isData} />}</>;
 }
-
-export default NowPlayingPage;
