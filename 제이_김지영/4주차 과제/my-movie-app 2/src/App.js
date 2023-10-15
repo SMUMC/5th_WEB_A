@@ -1,5 +1,4 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import MainPage from './pages/MainPage/MainPage';
 import HomeLayout from './pages/HomeLayout/HomeLayout';
 import PopularPage from './pages/PopularPage/PopularPage';
 import NowPlayingPage from './pages/NowPlayingPage/NowPlayingPage';
@@ -13,7 +12,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <MainPage />,
+        element: <PopularPage />,
       },
       {
         path: 'popular', 

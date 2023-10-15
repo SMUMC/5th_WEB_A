@@ -1,12 +1,9 @@
+import { FetchData } from "../../Hooks/FetchData";
+import MovieList from "../../Components/MovieList/MovieList";
+import LoadingSpinner from "../../Components/LoadingSpinner/LoadingSpinner";
 
-import { CustomFetch } from "../../hooks/fetchData";
-import MovieList from '../../Components/MovieList/MovieList';
-import Loading from '../../Components/Loading/Loading';
+export default function TopRated() {
+  const { isData, isLoading } = FetchData("top_rated");
 
-export default function Popular() {
-  const { isData, isLoading } = CustomFetch("popular");
-
-  const films = Array.isArray(isData) ? isData : [];
-  
-  return <>{isLoading ? <Loading /> : <MovieList films={isData} />}</>;
+  return <>{isLoading ? <LoadingSpinner /> : <MovieList films={isData} />}</>;
 }

@@ -1,6 +1,6 @@
 import * as S from './Loading.styled';
 
-function Loading() {
+function LoadingSpinner() {
   return (
     <S.Container>
       <S.LoadingSpinner />
@@ -8,6 +8,6 @@ function Loading() {
   );
 }
 
-export default Loading;
+export default LoadingSpinner;
 
 

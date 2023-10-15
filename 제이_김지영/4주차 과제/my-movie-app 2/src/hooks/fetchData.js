@@ -1,33 +1,31 @@
-import { useEffect, useState } from 'react';
+import axios from "axios";
+import { useState, useEffect } from "react";
 
-export function CustomFetch(endpoint) {
-  const [isData, setIsData] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+export function FetchData(pages) {
+  const [isData, setData] = useState([]);
+  const [isLoading, setLoad] = useState(true);
 
   useEffect(() => {
-    async function fetchData() {
+    const fetchMovie = async () => {
+      setLoad(true);
+      const options = {
+        method: "GET",
+        url: `https://api.themoviedb.org/3/movie/${pages}`,
+        params: { language: "ko-KR", page: "1" },
+        headers: {
+          accept: "application/json",
+          Authorization: `Bearer ${process.env.REACT_APP_API_TOKEN}`,
+        },
+      };
       try {
-        const response = await fetch(`https://api.themoviedb.org/3/movie/${endpoint}?api_key=${process.env.REACT_APP_API_KEY}`);
-        if (response.ok) {
-          const data = await response.json();
-          setIsData(data.results);
-          setIsLoading(false);
-        } else {
-          throw new Error('Failed to fetch data');
-        }
+        const response = await axios(options);
+        setData(response.data.results);
+        setLoad(false);
       } catch (error) {
-        console.error('Error fetching movie data:', error);
-        setIsLoading(false);
+        console.error(error);
       }
-    }
-
-    fetchData();
-  }, [endpoint]);
-
+    };
+    fetchMovie();
+  }, [pages]);
   return { isData, isLoading };
 }
-
-
-
-
-
