@@ -18,6 +18,6 @@ ReactDOM.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
-  document.getElementById('root') // index.html ÆÄÀÏÀÇ 'root' ¿ä¼Ò¿¡ ·»´õ¸µ
+  document.getElementById('root') // index.html íŒŒì¼ì˜ 'root' ìš”ì†Œì— ë Œë”ë§
 );
 */
