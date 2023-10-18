@@ -22,8 +22,8 @@ export const fetchGenreMovies = async ({ type, language, page }) => {
   }
 };
 
-export const fetchSingleMovie = async ({ type, language, page }) => {
-  const url = `https://api.themoviedb.org/3/movie/${type}?language=${language}&page=${page}`;
+export const fetchKeywordMovie = async (keyword) => {
+  const url = `https://api.themoviedb.org/3/search/movie?query=${keyword}&include_adult=true&language=ko-KR&page=1`;
 
   const options = {
     headers: {
