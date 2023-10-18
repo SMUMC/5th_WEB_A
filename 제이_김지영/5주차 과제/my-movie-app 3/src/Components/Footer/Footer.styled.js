@@ -4,10 +4,16 @@ const Container = styled.div`
   display: flex;
   height: 200px;
 
+  .info{
+    margin-top: 10px;
+  }
   h2{
     color: white;
-    height: 200px;
-
+    margin-bottom: 10px;
+  }
+  h4{
+    color: white;
+    height: 30px;
   }
 `;
 
