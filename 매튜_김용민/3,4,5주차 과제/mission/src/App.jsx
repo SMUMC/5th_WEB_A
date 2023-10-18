@@ -18,6 +18,8 @@ import { loader as popularLoader } from './pages/PopularPage/PopularPage';
 import { loader as nowPlayingLoader } from './pages/NowPlayingPage/NowPlayingPage';
 import { loader as topRatedLoader } from './pages/TopRated/TopRatedPage';
 import { loader as upComingLoader } from './pages/UpComing/UpComingPage';
+import { ThemeProvider } from 'styled-components';
+import theme from './constants/Theme';
 
 const router = createBrowserRouter([
   {
@@ -64,7 +66,11 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  return <RouterProvider router={router} fallbackElement={<Loading />} />;
+  return (
+    <ThemeProvider theme={theme}>
+      <RouterProvider router={router} fallbackElement={<Loading />} />;
+    </ThemeProvider>
+  );
 }
 
 export default App;

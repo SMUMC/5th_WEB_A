@@ -34,11 +34,10 @@ export const fetchKeywordMovie = async (keyword) => {
   try {
     const response = await axios(url, options);
     const data = response.data.results;
-    console.log(data);
     if (response.status !== 200) {
       throw new Error('데이터를 받아오는데 문제가 발생하였습니다.');
     }
-    return data;
+    return { data };
   } catch (e) {
     console.error(e);
   }
