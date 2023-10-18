@@ -34,7 +34,7 @@ export default function MovieDetail() {
       headers: {
         accept: 'application/json',
         Authorization:
-          'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2OGE3MzhhOWExZDY5OTUyNjQ4ZWY4OWIxNDI0NTFiZSIsInN1YiI6IjY1MjU5NGM2NDQ3ZjljMDBlM2Y2ZTgzNCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.SbKKgx2SS_uhI4p2cOJ7bCrfzC98RgEgiZ6uaDjo3-I',
+        `Bearer ${process.env.REACT_APP_MOVIE_TOKEN}`,
       },
     };
 
