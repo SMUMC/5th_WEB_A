@@ -1,5 +1,5 @@
 import { MoviesList } from '../../components';
-import { customFetch } from '../../utils/movie';
+import { fetchGenreMovies } from '../../utils/movie';
 import * as S from './TopRatedPage.style';
 
 const topRatedKoreanMovie = {
@@ -9,7 +9,7 @@ const topRatedKoreanMovie = {
 };
 
 export const loader = async () => {
-  const datum = await customFetch(topRatedKoreanMovie);
+  const datum = await fetchGenreMovies(topRatedKoreanMovie);
 
   return datum;
 };
