@@ -1,17 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import * as S from "./MovieDetail.styled";
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 
 export const MovieDetail = () => {
-    const datam = useLocation().state;
+    const state  = useLocation().state;
+    const { id, title } = useParams();
     const imgUrl = process.env.REACT_APP_POSTER_BASE_URL;
-    const { backdrop_path, poster_path, original_title, vote_average, overview } = datam;
-    const [star, setStar] = useState("");
+    const { backdrop_path, poster_path, vote_average, overview } = state;
+    const star = vote_average && "⭐".repeat(Math.floor(vote_average));
 
-    useEffect(() => {
-        const starString = "⭐".repeat(Math.floor(vote_average));
-        setStar(starString);
-    }, [vote_average]);
+    console.log(id);
+    console.log(title);
+    console.log(state);
 
     return (
         <S.Container>
@@ -19,7 +19,7 @@ export const MovieDetail = () => {
             <S.MovieDataContainer>
                 <S.Poster src={imgUrl + poster_path} />
                 <S.MovieInfomationContainer>
-                    <h3>{original_title}</h3>
+                    <h3>{title}</h3>
                     <h5>평점 {star}</h5>
                     <h5>줄거리</h5>
                     <p>{overview ? overview : "TMDB에서 제공하는 API에 상세 줄거리 정보가 없습니다."}</p>

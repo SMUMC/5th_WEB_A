@@ -3,11 +3,8 @@ import { IoSearchCircleSharp } from "react-icons/io5";
 import theme from "../../theme";
 
 export const Container = styled.div`
-    display: flex;
+    ${theme.styles.flexCenterColumn};
     gap: 30px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 `;
 
 export const Title = styled.h3`
@@ -42,6 +39,6 @@ export const SearchButton = styled(IoSearchCircleSharp)`
     display: flex;
     width: 40px;
     height: 40px;
-    color: ${theme["highlight/gold"]};
+    color: ${theme.color.highlight};
     cursor: pointer;
 `;

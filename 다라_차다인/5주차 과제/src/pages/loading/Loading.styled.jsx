@@ -1,6 +1,8 @@
 import styled from "styled-components";
+import theme from "../../theme";
 
 export const Background = styled.div`
+  ${theme.styles.flexCenterColumn};
   position: absolute;
   width: 100vw;
   height: 100vh;
@@ -8,9 +10,6 @@ export const Background = styled.div`
   left: 0;
   z-index: 999;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   background-color:rgba(0, 0, 0, 0.5);
 `;
 

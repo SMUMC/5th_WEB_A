@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import theme from "../../theme";
 
 export const Container = styled.div`
     display: flex;
@@ -8,8 +9,6 @@ export const Container = styled.div`
 `;
 
 export const SearchContainer = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    ${theme.styles.flexCenter};
     padding: 40px;
 `;

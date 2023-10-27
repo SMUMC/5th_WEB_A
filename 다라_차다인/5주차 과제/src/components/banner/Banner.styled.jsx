@@ -1,12 +1,10 @@
 import styled from "styled-components";
-// import theme from "../../theme";
+import theme from "../../theme";
 
 export const Container = styled.div`
-    display: flex;
+    ${theme.styles.flexCenter};
     background-color: black;
     height: 300px;
-    align-items: center;
-    justify-content: center;
 `;
 
 export const Content = styled.h1`

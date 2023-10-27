@@ -14,7 +14,7 @@ export const Container = styled.div`
     align-items: center;
     padding: 30px 20px;
     height: 30px;
-    background-color: ${theme["primary/nb"]};
+    background-color: ${theme.color.navbar};
 `;
 
 export const MenuContainer = styled.div`
@@ -43,7 +43,7 @@ export const Contents = styled(NavLink)`
     }
 
     &.active {
-        color: ${theme["highlight/gold"]};
+        color: ${theme.color.highlight};
         font-weight: 800;
     }
 `;
