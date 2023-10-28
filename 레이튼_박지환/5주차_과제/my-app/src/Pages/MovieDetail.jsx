@@ -1,5 +1,5 @@
 import { useLocation } from "react-router-dom";
-import MovieInfo from "../MovieInfo/MovieInfo";
+import MovieInfo from "/Users/mars/Documents/umc/5th_WEB_A/레이튼_박지환/5주차_과제/my-app/src/Components/MovieInfo/MovieInfo";
 
 export default function MovieDetail() {
   const { state } = useLocation();

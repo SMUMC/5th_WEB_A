@@ -1,11 +1,11 @@
-import * as S from "./Banner.style";
+import * as S from "/Users/mars/Documents/umc/5th_WEB_A/레이튼_박지환/5주차_과제/my-app/src/Components/Banner/Banner.style.jsx";
 
 export default function Banner() {
   return (
     <S.BannerContainer>
-      <S.Line1>Break The Rules!</S.Line1>
-      <S.Line2>WEB-A 파이팅!</S.Line2>
-      <S.Line3>중간고사 파이팅!</S.Line3>
+      <h1>Break The Rules</h1>
+      <h2>WEB-A 파이팅!</h2>
+      <h3>중간고사 파이팅!</h3>
     </S.BannerContainer>
   );
 }

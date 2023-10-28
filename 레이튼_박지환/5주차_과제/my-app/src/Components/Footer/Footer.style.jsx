@@ -6,10 +6,10 @@ export const FooterContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-`;
 
-export const Content = styled.div`
-  font-size: 27px;
-  color: white;
-  font-weight: bold;
+  p {
+    font-size: 27px;
+    color: white;
+    font-weight: bold;
+  }
 `;

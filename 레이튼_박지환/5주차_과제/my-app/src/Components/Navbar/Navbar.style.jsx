@@ -9,10 +9,6 @@ export const NavContainer = styled.div`
   background: purple;
 `;
 
-export const MenuContainer = styled.div`
-  display: flex;
-`;
-
 export const loginButton = styled.button`
   background-color: transparent;
   border: 0;

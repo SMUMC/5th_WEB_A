@@ -1,8 +1,8 @@
 import { useState } from "react"; // import react는 hook쓸 때만 쓰면 된다.
-import Movie from "../Movie/Movie";
 import { useNavigate } from "react-router-dom";
-import MovieDesc from "../MovieDesc/MovieDesc";
-import * as S from "./MovieContainer.style";
+import Movie from "/Users/mars/Documents/umc/5th_WEB_A/레이튼_박지환/5주차_과제/my-app/src/Components/Movie/Movie";
+import MovieDesc from "/Users/mars/Documents/umc/5th_WEB_A/레이튼_박지환/5주차_과제/my-app/src/Components/MovieDescription/MovieDescription";
+import * as S from "/Users/mars/Documents/umc/5th_WEB_A/레이튼_박지환/5주차_과제/my-app/src/Components/MovieContainer/MovieContainer.style";
 
 function MovieContainer({ film }) {
   // film을 각각 받아온다.

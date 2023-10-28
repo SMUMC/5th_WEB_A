@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./App";
+import App from "/Users/mars/Documents/umc/5th_WEB_A/레이튼_박지환/5주차_과제/my-app/src/App";
 import { BrowserRouter } from "react-router-dom";
 
 // 글로벌스타일은 특이하게 이런 식으로 부여한다. child 엘리먼트를 무시하기 때문이다.

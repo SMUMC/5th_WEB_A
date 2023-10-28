@@ -11,11 +11,12 @@ export const Background = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  z-indes: 999;
-`;
-export const Text = styled.div`
-  font: 1rem;
-  text-align: center;
+  z-index: 999;
+
+  p {
+    font: 1rem;
+    text-align: center;
+  }
 `;
 
 export const Loader = styled.div`
@@ -27,7 +28,7 @@ export const Loader = styled.div`
   width: 120px;
   height: 120px;
   animation: spin 1s linear infinite;
-  @-webkit-keyframes spin {
+  @keyframes spin {
     0% {
       -webkit-transform: rotate(0deg);
     }

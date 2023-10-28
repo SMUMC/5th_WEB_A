@@ -7,17 +7,20 @@ export const ErrorBox = styled.div`
   justify-content: center;
   font-weight: bold;
   height: 100vh;
-`;
 
-export const ErrorTitle = styled.p`
-  color: red;
-  font-size: 30px;
-`;
-export const ErrorLine = styled.p`
-  color: white;
-  font-size: 20px;
-`;
-export const ErrorLink = styled.a`
-  color: yellow;
-  text-decoration: none;
+  h1 {
+    color: red;
+    font-size: 30px;
+  }
+
+  p {
+    color: white;
+    font-size: 20px;
+  }
+
+  a {
+    color: yellow;
+    text-decoration: none;
+    font-weight: bold;
+  }
 `;

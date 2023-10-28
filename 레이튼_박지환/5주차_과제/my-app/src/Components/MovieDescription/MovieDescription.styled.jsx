@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const DescriptContainer = styled.div`
+export const DescriptionContainer = styled.div`
   padding-top: 0;
   color: white;
   height: 385px;
@@ -9,13 +9,14 @@ export const DescriptContainer = styled.div`
   left: 0;
   background-color: rgba(0, 0, 0, 0.6);
   position: relative;
-`;
 
-export const DescriptTitle = styled.h5`
-  padding-top: 50px;
-  padding: 20px;
-`;
+  h1 {
+    padding-top: 50px;
+    padding: 20px;
+    font-size: 1rem;
+  }
 
-export const DescriptPara = styled.p`
-  font-size: 8px;
+  p {
+    font-size: 8px;
+  }
 `;
