@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 
-export function FetchData(pages) {
+export function FetchData(category) {
   const [isData, setData] = useState([]);
   const [isLoading, setLoad] = useState(true);
 
@@ -10,7 +10,7 @@ export function FetchData(pages) {
       setLoad(true);
       const options = {
         method: "GET",
-        url: `https://api.themoviedb.org/3/movie/${pages}`,
+        url: `https://api.themoviedb.org/3/movie/${category}`,
         params: { language: "ko-KR", page: "1" },
         headers: {
           accept: "application/json",
@@ -26,6 +26,6 @@ export function FetchData(pages) {
       }
     };
     fetchMovie();
-  }, [pages]);
+  }, [category]);
   return { isData, isLoading };
 }
