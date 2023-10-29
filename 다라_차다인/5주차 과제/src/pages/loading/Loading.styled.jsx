@@ -1,5 +1,14 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import theme from "../../theme";
+
+const rotate360 = keyframes`
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+`;
 
 export const Background = styled.div`
   ${theme.styles.flexCenterColumn};
@@ -25,12 +34,8 @@ export const Loader = styled.div`
     border-radius: 50%;
     width: 50px;
     height: 50px;
-    animation: spin 2s linear infinite;
+    animation: ${rotate360} 1s linear infinite;
+    transform: translateZ(0);
     margin: 0 auto;
     margin-top: 20px;
-
-    @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-    }
 `;
