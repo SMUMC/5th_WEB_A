@@ -1,0 +1,192 @@
+/* DEFAULT_SETTING */
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+}
+
+/* ROOT_COLOR */
+
+:root {
+  --main-dark-color: #e9e2e291;
+  --main-white-color: #fff;
+  --main-black-color: #000;
+  --main-hover-color: skyblue;
+}
+
+/* CONTAINER */
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background: url('../img/background.svg') no-repeat center;
+  background-size: cover;
+}
+
+/* LOGIN_CONTAINER */
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50rem;
+  height: 45rem;
+  padding: 1rem;
+  background-color: rgba(146, 149, 160, 0.6);
+  border-radius: 1rem;
+}
+
+.login-container__title {
+  font-size: 3.5rem;
+  font-weight: bold;
+}
+
+.login-container__divider {
+  width: 60%;
+  height: 0.2rem;
+  margin: 1rem 0;
+  background-color: var(--main-dark-color);
+}
+
+/* LOGIN_FORM */
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.25rem;
+}
+
+.login-form__divider {
+  width: 100%;
+  height: 0.2rem;
+  background-color: var(--main-dark-color);
+}
+
+#login-form__name,
+#login-form__nickname,
+#login-form__email,
+#login-form__password,
+#login-form__check-password {
+  background: transparent;
+  border: 2px solid white;
+  border-radius: 5px;
+  height: 2rem;
+  width: 16rem;
+  color: white;
+}
+
+.failure-name-message,
+.failure-nickname-message,
+.failure-email-message,
+.failure-password-message,
+.failure-check-password-message {
+  font-size: 0.4rem;
+  color: red;
+  display: flex;
+}
+
+.success-name-message,
+.success-nickname-message,
+.success-email-message,
+.success-password-message,
+.success-check-password-message {
+  font-size: 0.4rem;
+  color: lightgreen;
+  display: flex;
+}
+
+.failure-name-message.hide,
+.failure-nickname-message.hide,
+.failure-email-message.hide,
+.failure-password-message.hide,
+.failure-check-password-message.hide {
+  display: none;
+}
+
+.success-name-message.hide,
+.success-nickname-message.hide,
+.success-email-message.hide,
+.success-password-message.hide,
+.success-check-password-message.hide {
+  display: none;
+}
+
+label {
+  color: var(--main-white-color);
+  margin-top: 0.3rem;
+}
+
+.login-form__sign-up-btn {
+  width: 100%;
+  padding: 1rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 1rem;
+  background-color: var(--main-dark-color);
+  color: var(--main-white-color);
+  font-size: 1.1rem;
+  margin: 2rem 0;
+  text-align: center;
+  transition: all linear 0.3s;
+}
+
+.login-form__sign-up-btn.success {
+  width: 100%;
+  padding: 1rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 1rem;
+  background-color: var(--main-hover-color);
+  color: var(--main-white-color);
+  font-size: 1.1rem;
+  margin: 2rem 0;
+  text-align: center;
+  transition: all linear 0.3s;
+}
+
+.login-form__login-btn:hover {
+  transform: scale(1.1);
+}
+
+/* MODAL */
+.modal-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background: white;
+  padding: 24px 16px;
+  border-radius: 0.8rem;
+  width: 320px;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.close-btn__box button {
+  margin-left: 15rem;
+  border-radius: 0.5rem;
+  padding: 0.2rem 0.5rem;
+  background-color: var(--main-dark-color);
+  border-color: var(--main-dark-color);
+}

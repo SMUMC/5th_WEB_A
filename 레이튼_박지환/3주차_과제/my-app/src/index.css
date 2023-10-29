@@ -1,0 +1,87 @@
+:root {
+  --main-color: rgb(27, 20, 130);
+  --box-color: rgb(113, 106, 207);
+  --font-color: white;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--main-color);
+}
+
+.app_container {
+  /* grid 속성을 많이 써보자, 전체 스타일링 할 때는 최상위 요소에 주는게 좋다 더 직관적 */
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  place-items: center;
+  padding: 12px;
+}
+
+@media screen and (max-width: 768px) {
+  .app_container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  /* 미디어 쿼리로 스타일 줘서 반응형으로 만들어짐 */
+}
+
+@media screen and (max-width: 320px) {
+  .app_container {
+    grid-template-columns: repeat(1, 1fr);
+    place-items: center;
+  }
+}
+
+.container {
+  height: 385px;
+  width: 220px;
+  position: relative;
+}
+
+.movies {
+  width: 220px;
+  top: 0;
+  left: 0;
+  position: absolute;
+  background-color: var(--box-color);
+  color: var(--font-color);
+}
+
+.movies img {
+  width: 100%;
+  height: 300px;
+}
+
+.movies_info {
+  display: flex;
+  align-items: center;
+  padding: 25px;
+  margin: 0;
+  height: 80px;
+  justify-content: space-between;
+}
+
+.descript_container {
+  padding-top: 0;
+  color: white;
+  height: 385px;
+  width: 220px;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: relative;
+}
+.descript_container h5 {
+  padding-top: 50px;
+  padding: 20px;
+}
+.descript_container p {
+  font-size: 8px;
+}
