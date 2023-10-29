@@ -1,35 +1,36 @@
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import HomeLayout from './pages/HomeLayout/HomeLayout';
-import PopularPage from './pages/PopularPage/PopularPage';
-import NowPlayingPage from './pages/NowPlayingPage/NowPlayingPage';
-import TopRatedPage from './pages/TopRatedPage/TopRatedPage';
-import UpcomingPage from './pages/UpcomingPage/UpcomingPage';
-import MovieDetailPage from './pages/MovieDetailPage/MovieDetailPage';
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import HomeLayout from "./pages/HomeLayout/HomeLayout";
+import PopularPage from "./pages/PopularPage/PopularPage";
+import NowPlayingPage from "./pages/NowPlayingPage/NowPlayingPage";
+import TopRatedPage from "./pages/TopRatedPage/TopRatedPage";
+import UpcomingPage from "./pages/UpcomingPage/UpcomingPage";
+import MovieDetailPage from "./pages/MovieDetailPage/MovieDetailPage";
+import MainPage from "./pages/MainPage/MainPage";
 
 const movie_id = 123;
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <HomeLayout />,
     children: [
       {
         index: true,
+        element: <MainPage />,
+      },
+      {
+        path: "popular",
         element: <PopularPage />,
       },
       {
-        path: 'popular',
-        element: <PopularPage />,
-      },
-      {
-        path: 'nowplaying', //
+        path: "nowplaying", //
         element: <NowPlayingPage />,
       },
       {
-        path: 'toprated',
+        path: "toprated",
         element: <TopRatedPage />,
       },
-      { path: 'upcoming', element: <UpcomingPage /> },
+      { path: "upcoming", element: <UpcomingPage /> },
       {
         // dynamic route
         path: `movie/:id`,

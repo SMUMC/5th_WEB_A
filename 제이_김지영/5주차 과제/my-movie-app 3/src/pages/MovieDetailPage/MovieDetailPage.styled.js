@@ -1,7 +1,7 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Container = styled.div`
-  display: flex;  // 수평 배열
+  display: flex; // 수평 배열
   margin: 0px;
   background-color: #747880;
   border-radius: 8px;
@@ -9,7 +9,7 @@ export const Container = styled.div`
 
   & > div {
     margin: 0 25px; /* 좌우 25px 간격 설정 */
-    flex: 1;  // 자식 요소가 확장되도록 flex 속성 추가
+    flex: 1; // 자식 요소가 확장되도록 flex 속성 추가
   }
 
   img {

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const Container = styled.div`
   display: flex;
@@ -14,17 +14,28 @@ const Container = styled.div`
       0px -1px yellow;
   }
 
+  button {
+    margin-right: 30px;
+    margin-bottom: 25px;
+    color: rgb(230, 90, 39);
+    font-size: 2rem;
+    font-family: fantasy;
+    text-shadow: -1px 0px yellow, 0px 1px yellow, 1px 0px yellow,
+      0px -1px yellow;
+    background-color: #22254b;
+  }
+
   h1.hovered1 {
-    font-size: 42px; 
+    font-size: 42px;
   }
   h1.hovered2 {
-    font-size: 42px; 
+    font-size: 42px;
   }
   h1.hovered3 {
-    font-size: 42px; 
+    font-size: 42px;
   }
   h1.hovered4 {
-    font-size: 42px; 
+    font-size: 42px;
   }
 `;
 
