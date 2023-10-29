@@ -12,7 +12,7 @@ export default function MovieInfo({
     <S.InfoBackground>
       <div>
         <img src={IMAGE_URL + poster_path} alt={title} />
-        <S.InfoWrapper>
+        <div className="InfoWrapper">
           <h1>{title}</h1>
           <div>
             <h2>평점</h2>
@@ -26,7 +26,7 @@ export default function MovieInfo({
           ) : (
             <h3>{overview}</h3>
           )}
-        </S.InfoWrapper>
+        </div>
       </div>
     </S.InfoBackground>
   );

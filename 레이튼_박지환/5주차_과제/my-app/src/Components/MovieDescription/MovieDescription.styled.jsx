@@ -17,6 +17,6 @@ export const DescriptionContainer = styled.div`
   }
 
   p {
-    font-size: 8px;
+    font-size: 0.5rem;
   }
 `;

@@ -13,21 +13,21 @@ export const loginButton = styled.button`
   background-color: transparent;
   border: 0;
   color: #c39796;
+  margin: 50px;
   &:hover {
     color: #ff9800;
     font-size: 20px;
     cursor: pointer;
   }
-  margin: 50px;
 `;
 
 export const StyledLink = styled(Link)`
   color: #c39796;
   text-decoration: none;
+  margin: 50px;
   &:hover {
     color: #ff9800;
     font-size: 20px;
     cursor: pointer;
   }
-  margin: 50px;
 `;

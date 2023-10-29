@@ -25,25 +25,23 @@ export const InfoBackground = styled.div`
     height: 80%;
     margin-right: 100px;
   }
-`;
-
-export const InfoWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 400px;
-
+  .InfoWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+  }
   h1 {
-    font-size: 50px;
+    font-size: 3rem;
     margin-right: 20px;
     margin-bottom: 30px;
   }
 
   h2 {
-    font-size: 20px;
+    font-size: 1.2rem;
     margin-bottom: 100px;
   }
   h3 {
-    font-size: 15px;
+    font-size: 1rem;
   }
   div {
     margin-bottom: 100px;

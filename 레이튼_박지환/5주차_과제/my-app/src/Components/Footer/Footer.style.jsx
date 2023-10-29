@@ -8,7 +8,7 @@ export const FooterContainer = styled.div`
   align-items: center;
 
   p {
-    font-size: 27px;
+    font-size: 1.5rem;
     color: white;
     font-weight: bold;
   }

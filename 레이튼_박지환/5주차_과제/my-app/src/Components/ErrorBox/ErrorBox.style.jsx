@@ -10,12 +10,12 @@ export const ErrorBox = styled.div`
 
   h1 {
     color: red;
-    font-size: 30px;
+    font-size: 2rem;
   }
 
   p {
     color: white;
-    font-size: 20px;
+    font-size: 1.4rem;
   }
 
   a {
