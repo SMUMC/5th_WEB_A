@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import Navbar from "/Users/mars/Documents/umc/5th_WEB_A/레이튼_박지환/5주차_과제/my-app/src/Components/Navbar/Navbar";
+import Navbar from "../Components/Navbar/Navbar";
 import {
   NowPlaying,
   Popular,
@@ -8,7 +8,7 @@ import {
   MainPage,
   MovieDetail,
   NotFound,
-} from "/Users/mars/Documents/umc/5th_WEB_A/레이튼_박지환/5주차_과제/my-app/src/Pages/index";
+} from "../Pages/index";
 
 // import Footer from "../Footer/Footer";
 

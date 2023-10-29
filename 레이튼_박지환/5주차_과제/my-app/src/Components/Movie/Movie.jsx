@@ -1,4 +1,4 @@
-import * as S from "/Users/mars/Documents/umc/5th_WEB_A/레이튼_박지환/5주차_과제/my-app/src/Components/Movie/Movie.style";
+import * as S from "../Movie/Movie.style";
 
 const IMAGE_URL = "https://image.tmdb.org/t/p/w1280/";
 

@@ -1,5 +1,5 @@
-import * as S from "/Users/mars/Documents/umc/5th_WEB_A/레이튼_박지환/5주차_과제/my-app/src/Components/Navbar/Navbar.style";
-import Login from "/Users/mars/Documents/umc/5th_WEB_A/레이튼_박지환/5주차_과제/my-app/src/Components/Navbar/Login";
+import * as S from "../Navbar/Navbar.style";
+import Login from "../Navbar/Login";
 function Navbar() {
   return (
     <S.NavContainer>

@@ -1,4 +1,14 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const rotate = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+`;
 
 export const Background = styled.div`
   position: absolute;
@@ -27,13 +37,5 @@ export const Loader = styled.div`
   border-radius: 0%;
   width: 120px;
   height: 120px;
-  animation: spin 1s linear infinite;
-  @keyframes spin {
-    0% {
-      -webkit-transform: rotate(0deg);
-    }
-    100% {
-      -webkit-transform: rotate(360deg);
-    }
-  }
+  animation: ${rotate} 1s linear infinite;
 `;
