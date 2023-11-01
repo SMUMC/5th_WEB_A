@@ -1,19 +1,18 @@
 import { useState } from 'react';
 import * as S from './Navbar.style';
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
   const [isLogin, setIsLogin] = useState(false);
-  const handleLogin = () => {
-    setIsLogin((prev) => !prev);
-  };
+
   return (
     <S.NavbarContainer>
       <S.Logo to='/'>MFlix</S.Logo>
 
       <S.MainNav>
-        <S.LoginButton onClick={handleLogin}>
-          <h1>{isLogin ? '로그아웃' : '로그인'}</h1>
-        </S.LoginButton>
+        <S.NavLi>
+          <S.NavMenu to='/signup'>회원가입</S.NavMenu>
+        </S.NavLi>
         <S.NavLi>
           <S.NavMenu to='/popular'>Popular</S.NavMenu>
         </S.NavLi>

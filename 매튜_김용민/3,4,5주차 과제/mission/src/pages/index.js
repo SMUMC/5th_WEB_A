@@ -6,3 +6,4 @@ export { default as NowPlayingPage } from './NowPlayingPage/NowPlayingPage';
 export { default as TopRatedPage } from './TopRated/TopRatedPage';
 export { default as UpComingPage } from './UpComing/UpComingPage';
 export { default as MovieDetailPage } from './MovieDetailPage/MovieDetailPage';
+export { default as LoginPage } from './LoginPage/LoginPage';

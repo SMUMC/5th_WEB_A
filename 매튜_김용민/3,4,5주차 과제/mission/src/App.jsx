@@ -9,6 +9,7 @@ import {
   UpComingPage,
   PopularPage,
   MovieDetailPage,
+  LoginPage,
 } from './pages';
 
 import { Loading } from './components';
@@ -59,6 +60,11 @@ const router = createBrowserRouter([
       {
         path: 'movie/:title',
         element: <MovieDetailPage />,
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: 'signup',
+        element: <LoginPage />,
         errorElement: <ErrorPage />,
       },
     ],
