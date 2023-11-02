@@ -3,11 +3,11 @@ import { Button } from "../../components/button/index";
 import { useDispatch, useSelector } from "react-redux";
 import { clearCart } from "../../redux/slices/cartSlice";
 import { closeModal } from "../../redux/slices/modalSlice";
+import ModalPortal from "../../modalPotal";
 
-export const Modal = () => {
-    const modalContent = useSelector((state) => state.modal.modalContent);
+export const Modal = ({ children }) => {
     const dispatch = useDispatch();
-    
+
     const resetCart = () => {
         dispatch(clearCart());
         dispatch(closeModal());
@@ -18,15 +18,15 @@ export const Modal = () => {
     };
 
     return (
-        <>
-            <S.Background />
+        <ModalPortal>
+            <S.Background onClick={modalOff} />
             <S.ModalContainer>
-                <p>{modalContent}</p>
+                {children}
                 <S.ButttonContainer>
-                    <Button onClick={resetCart} title={"예"}/>
-                    <Button onClick={modalOff} title={"아니오"}/>                
+                    <Button onClick={resetCart} title={"예"} />
+                    <Button onClick={modalOff} title={"아니오"} />
                 </S.ButttonContainer>
             </S.ModalContainer>
-        </>
+        </ModalPortal>
     );
 };

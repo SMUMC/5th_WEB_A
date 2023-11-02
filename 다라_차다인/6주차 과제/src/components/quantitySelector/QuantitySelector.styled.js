@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { AiOutlineUp, AiOutlineDown} from "react-icons/ai";
+import { AiOutlineUp, AiOutlineDown } from "react-icons/ai";
 import theme from "../../theme";
 
 export const Container = styled.div`
@@ -14,9 +14,13 @@ export const Container = styled.div`
 export const CountUp = styled(AiOutlineUp)`
     font-size: 16px;
     color: ${theme.color.countText};
+
+    cursor: pointer;
 `;
 
 export const CountDown = styled(AiOutlineDown)`
     font-size: 16px;
     color: ${theme.color.countText};
+
+    cursor: pointer;
 `;

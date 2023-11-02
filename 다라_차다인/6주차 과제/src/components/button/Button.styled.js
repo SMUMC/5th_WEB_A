@@ -9,4 +9,5 @@ export const Button = styled.button`
     color: ${theme.color.button};
     border: 1px solid ${theme.color.button};
     border-radius: 5px;
+    cursor: pointer;
 `;

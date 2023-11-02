@@ -9,16 +9,13 @@ export const SelectedMusic = ({ id }) => {
 
     return (
         <S.Container>
-            <S.Cover src={img}/>
+            <S.Cover src={img} />
             <S.ContentsContainer>
                 <h5>{title} | {singer}</h5>
                 <p>₩{price}</p>
             </S.ContentsContainer>
             <S.CountContainer>
-                <QuantitySelector 
-                    id={id}
-                    amount={amount}
-                />
+                <QuantitySelector id={id} amount={amount} />
             </S.CountContainer>
         </S.Container>
     );

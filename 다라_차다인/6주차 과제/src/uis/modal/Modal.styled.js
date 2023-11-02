@@ -15,6 +15,9 @@ export const Background = styled.div`
 export const ModalContainer = styled.div`
     ${theme.styles.flexCenterColumn}
     position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 300px;
     height: 200px;
     padding: 20px;

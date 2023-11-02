@@ -14,12 +14,12 @@ export const QuantitySelector = ({ id, amount }) => {
             dispatch(decrease(id));
         }
     }
-    
+
     return (
         <S.Container>
-            <S.CountUp onClick={CountIncrease}/>
+            <S.CountUp onClick={CountIncrease} />
             <p>{amount}</p>
-            <S.CountDown onClick={CountDecrease}/>
+            <S.CountDown onClick={CountDecrease} />
         </S.Container>
     );
 };
