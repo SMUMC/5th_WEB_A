@@ -45,3 +45,4 @@ export const { increase, decrease, removeItem, clearCart } =
   shoppingSlice.actions;
 
 export default shoppingSlice.reducer;
+// 동적인 애들만 slice에 넣어준다.
