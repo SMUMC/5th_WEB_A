@@ -10,23 +10,25 @@ export const MusicContainer = styled.div`
   .wrapper {
     display: flex;
     flex-direction: row;
+    ${theme.style.flexCenter}
   }
 
   img {
+    margin-bottom: 5px;
     width: 70px;
     height: 70px;
   }
 
   h1 {
-    padding-top: 15px;
-    padding-left: 20px;
-    font-size: 1rem;
+    margin: 1%;
+    font-size: 0.8rem;
+    width: 100%;
   }
 
   .buttonWrapper {
+    width: 20px;
+    margin-left: 40%;
     ${theme.style.flexCenterColumn}
-    flex: 1;
-    justify-content: flex-end;
   }
 
   button {

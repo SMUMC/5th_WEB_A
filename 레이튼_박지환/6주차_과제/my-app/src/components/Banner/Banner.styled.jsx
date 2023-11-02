@@ -12,11 +12,11 @@ export const Banner = styled.div`
   }
 
   div {
-    position: relative;
+    position: absolute;
+    margin-left: 92%;
+    text-align: center;
     border-radius: 10px;
     width: 17px;
-    z-index: 999;
     background: pink;
-    margin-left: 92%;
   }
 `;

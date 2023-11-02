@@ -45,4 +45,4 @@ export const { increase, decrease, removeItem, clearCart } =
   shoppingSlice.actions;
 
 export default shoppingSlice.reducer;
-// 동적인 애들만 slice에 넣어준다.
+// 동적인 애들만 slice에 넣어준다. modal Slice도 만들어주자

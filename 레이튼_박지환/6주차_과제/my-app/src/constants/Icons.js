@@ -5,6 +5,7 @@ export const CartIcon = () => {
     width: "34px",
     color: "black",
     marginLeft: "90%",
+    position: "relative",
   };
   return (
     <svg
