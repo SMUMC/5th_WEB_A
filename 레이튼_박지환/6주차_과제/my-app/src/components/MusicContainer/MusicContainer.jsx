@@ -2,7 +2,6 @@ import { useDispatch } from "react-redux";
 import { increase, decrease, removeItem } from "../../redux/shoppingSlice";
 import { ChevronDown, ChevronUp } from "../../constants/Icons";
 import * as S from "../MusicContainer/MusicContainer.styled";
-
 export default function MusicContainer({
   id,
   img,

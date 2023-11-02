@@ -6,6 +6,7 @@ export const MusicContainer = styled.div`
   width: 80%;
   background: pink;
   margin: 20px 0px;
+  position: relative;
 
   .wrapper {
     display: flex;
