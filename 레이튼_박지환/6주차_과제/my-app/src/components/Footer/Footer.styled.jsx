@@ -8,17 +8,30 @@ export const Footer = styled.div`
 
   h1 {
     margin-left: 10%;
-    margin-top: 1%;
+    font-size: 1rem;
+    position: absolute;
+  }
+
+  div {
+    margin-top: 2%;
+    height: 3%;
+    width: 80%;
+    display: flex;
+  }
+
+  p {
+    position: relative;
+    margin-left: 35%;
     font-size: 1rem;
   }
 
   button {
     background: transparent;
-    width: 10%;
+    width: 15%;
     font-size: 1rem;
     margin-top: 3%;
-    margin-left: 35%;
-    height: 50px;
+    margin-right: 50%;
+    height: 40%;
     color: red;
     border-color: red;
   }

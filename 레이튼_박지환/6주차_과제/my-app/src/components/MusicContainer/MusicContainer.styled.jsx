@@ -10,7 +10,6 @@ export const MusicContainer = styled.div`
   .wrapper {
     display: flex;
     flex-direction: row;
-    ${theme.style.flexCenter}
   }
 
   img {
@@ -20,15 +19,15 @@ export const MusicContainer = styled.div`
   }
 
   h1 {
-    margin: 1%;
+    margin-left: 2%;
+    margin-top: 2%;
     font-size: 0.8rem;
-    width: 100%;
+    width: 85%;
   }
 
   .buttonWrapper {
-    width: 20px;
-    margin-left: 40%;
-    ${theme.style.flexCenterColumn}
+    width: 2%;
+    ${theme.style.flexCenterColumn};
   }
 
   button {

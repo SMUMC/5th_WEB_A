@@ -7,6 +7,8 @@ import cartItems from "../constants/cartItems";
 const initialState = {
   cartItems: items, // 반드시 선언해줘야한다.(중요)
   sum: 7,
+  total: 0,
+  amount: 0,
 };
 
 export const shoppingSlice = createSlice({
@@ -38,10 +40,20 @@ export const shoppingSlice = createSlice({
       state.cartItems = [];
       state.sum = 0;
     },
+    calculateTotals: (state) => {
+      let amount = 0;
+      let total = 0;
+      state.cartItems.forEach((item) => {
+        amount += item.amount;
+        total += item.amount * item.price;
+      });
+      state.amount = amount;
+      state.total = total;
+    },
   },
 });
 
-export const { increase, decrease, removeItem, clearCart } =
+export const { increase, decrease, removeItem, clearCart, calculateTotals } =
   shoppingSlice.actions;
 
 export default shoppingSlice.reducer;
