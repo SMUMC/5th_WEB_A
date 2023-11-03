@@ -21,7 +21,7 @@ export const Footer = styled.div`
 
   p {
     position: relative;
-    margin-left: 35%;
+    margin-left: 31%;
     font-size: 1rem;
   }
 
@@ -30,7 +30,7 @@ export const Footer = styled.div`
     width: 15%;
     font-size: 1rem;
     margin-top: 3%;
-    margin-right: 50%;
+    margin-right: 45%;
     height: 40%;
     color: red;
     border-color: red;

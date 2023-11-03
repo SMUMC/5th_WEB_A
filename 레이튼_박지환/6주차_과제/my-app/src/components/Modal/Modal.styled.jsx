@@ -8,18 +8,18 @@ export const ModalBackground = styled.div`
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.7);
 `;
 
 export const Modal = styled.div`
   display: ${(props) => (props.isModal ? "block" : "none")};
+  position: fixed;
+  top: 50%;
+  left: 50%;
   width: 200px;
   height: 200px;
   background: skyblue;
   border-radius: 10px;
-  position: fixed;
-  top: 50%;
-  left: 50%;
   transform: translate(-50%, -50%);
   h1 {
     font-size: 1rem;
