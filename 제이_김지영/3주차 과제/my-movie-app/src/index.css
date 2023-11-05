@@ -1,0 +1,85 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.page-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: rgb(0, 0, 0);
+  margin: 0px;
+  color: rgb(201, 18, 18);
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-shadow: 6px 2px 2px gray;
+}
+
+.movie-zip {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: rgb(17, 17, 64);
+}
+
+.movie-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 165px; /* 컨테이너 너비 설정 */
+  height: 295px; 
+  border: 2px; /* 테두리 스타일 및 색상 설정 */
+  margin: 10px; 
+  margin-bottom: 2rem;
+  background-color: rgb(37, 37, 93);
+}
+
+.movie-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px; /* 이미지의 너비 설정 */
+  height: auto; /* 높이 자동 조정 결과 */
+  /*border: 2px solid #ccc;*/ /* 테두리 스타일 및 색상 설정 */
+  margin: 10px; /* 이미지 주위 여백 설정 */
+  margin-bottom: 0px;
+}
+
+.movie-title {
+  font-size: smaller;
+  margin: 10px;
+  /*margin-top: 8px;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:azure;
+}
+
+.movie-overview {
+  color:azure;
+  font-size: x-small;
+  margin: 8px;
+}
+
+.overview-container {
+  width: 165px; 
+  height: 295px; 
+  background-color: rgb(52, 42, 92);
+  opacity: 90%;
+  position: absolute; /*overview-container가 movie-container위에 겹치도록*/
+  display: none; /*hide overview-container*/
+  overflow: hidden; /*내용이 넘치면 숨기기*/
+}
+
+.movie-container:hover .overview-container{
+  display: block; /*movie-container 위에 마우스 가져가면(hover) show overview-container*/
+}
