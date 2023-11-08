@@ -6,6 +6,7 @@ import TopRatedPage from "./pages/TopRatedPage/TopRatedPage";
 import UpcomingPage from "./pages/UpcomingPage/UpcomingPage";
 import MovieDetailPage from "./pages/MovieDetailPage/MovieDetailPage";
 import MainPage from "./pages/MainPage/MainPage";
+import SignupPage from "./pages/SignupPage/SignupPage";
 
 const movie_id = 123;
 
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <MainPage />,
+      },
+      {
+        path: "signup",
+        element: <SignupPage />,
       },
       {
         path: "popular",

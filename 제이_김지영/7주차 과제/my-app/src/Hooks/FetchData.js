@@ -1,5 +1,5 @@
-import axios from 'axios';
-import { useState, useEffect } from 'react';
+import axios from "axios";
+import { useState, useEffect } from "react";
 
 export function FetchData(pages) {
   const [isData, setData] = useState([]);
@@ -9,11 +9,11 @@ export function FetchData(pages) {
     const fetchMovie = async () => {
       setLoad(true);
       const options = {
-        method: 'GET',
+        method: "GET",
         url: `https://api.themoviedb.org/3/movie/${pages}`,
-        params: { language: 'ko-KR', page: '1' },
+        params: { language: "ko-KR", page: "1" },
         headers: {
-          accept: 'application/json',
+          accept: "application/json",
           Authorization: `Bearer ${process.env.REACT_APP_MOVIE_TOKEN}`,
         },
       };

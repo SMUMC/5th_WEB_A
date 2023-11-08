@@ -4,12 +4,15 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 
 function Header() {
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
-  const handleButtonClick = () => {
-    setIsLoggedIn(!isLoggedIn);
-  };
-  const buttonText = isLoggedIn ? "로그아웃" : "로그인";
+  //const [isLoggedIn, setIsLoggedIn] = useState(true);
 
+  const handleButtonClick = () => {
+    //setIsLoggedIn(!isLoggedIn);
+  };
+
+  const buttonText = "회원가입"; //isLoggedIn ? "로그아웃" : "로그인";
+
+  const [isHover0, setIsHover0] = useState(false);
   const [isHover1, setIsHover1] = useState(false);
   const [isHover2, setIsHover2] = useState(false);
   const [isHover3, setIsHover3] = useState(false);
@@ -20,13 +23,10 @@ function Header() {
       <S.Container>
         <Link to="/">
           <S.Logo>
-            <h1>Watcha</h1>
+            <h1>Netflix</h1>
           </S.Logo>
         </Link>
         <S.Category>
-          <div>
-            <button onClick={handleButtonClick}>{buttonText}</button>
-          </div>
           <Link
             to="/popular"
             onMouseEnter={() => setIsHover1(true)}
@@ -54,6 +54,13 @@ function Header() {
             onMouseLeave={() => setIsHover4(false)}
           >
             <h1 className={isHover4 ? "hovered4" : ""}>Upcoming</h1>
+          </Link>
+          <Link
+            to="/signup"
+            onMouseEnter={() => setIsHover0(true)}
+            onMouseLeave={() => setIsHover0(false)}
+          >
+            <button onClick={handleButtonClick}>{buttonText}</button>
           </Link>
         </S.Category>
       </S.Container>
