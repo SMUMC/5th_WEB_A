@@ -1,5 +1,6 @@
 import * as S from "../SearchBox/SearchBox.styled";
 import { useState, useEffect } from "react";
+import { UseDebouncing } from "../../Hooks/UseDebouncing";
 
 export default function SearchBox() {
   const [isKeyword, setIsKeyword] = useState("");
@@ -23,9 +24,11 @@ export default function SearchBox() {
       .catch((err) => console.error(err));
   }
 
+  const useDebouncing = UseDebouncing(isKeyword, 300);
+
   useEffect(() => {
     searchMovie();
-  }, [isKeyword]);
+  }, [useDebouncing]);
 
   const handleInput = (event) => {
     setIsKeyword(event.target.value);

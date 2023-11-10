@@ -96,6 +96,7 @@ export default function SignUpBox() {
       console.log("");
     }
   };
+
   return (
     <S.Container>
       <h1>회원가입 페이지</h1>
