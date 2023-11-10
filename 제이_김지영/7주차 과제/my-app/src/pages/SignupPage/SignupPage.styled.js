@@ -1,3 +1,4 @@
+// SignupPage.styled.js
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -19,25 +20,27 @@ const Container = styled.div`
     opacity: 0.7;
     width: 50%;
     height: 80%;
-    border-radius: 15px 15px 15px 15px;
+    border-radius: 15px;
     gap: 10px;
-    min-width: 500px; /* 최소 너비 설정 */
-    min-height: 700px; /* 최소 높이 설정 */
-    white-space: nowrap; /* 텍스트 줄바꿈 방지 */
+    min-width: 500px;
+    min-height: 700px;
+    white-space: nowrap;
+    padding: 20px;
   }
 
   .box-title {
     font-weight: bold;
-    font-size: 40px;
-  }
-
-  .hr {
-    width: 70%;
-    background-color: grey;
+    font-size: px;
     margin-bottom: 10px;
   }
 
-  .login-form {
+  hr {
+    width: 70%;
+    background-color: grey;
+    margin-bottom: 0px;
+  }
+
+  form {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -45,60 +48,39 @@ const Container = styled.div`
     gap: 10px;
     margin-bottom: 0px;
     margin-top: 30px;
+    width: 300px;
   }
 
   input {
-    width: 350px;
+    width: 100%;
     height: 40px;
     color: grey;
     background-color: transparent;
     font-size: 15px;
     border: 1.5px solid rgb(145, 134, 134);
     padding-left: 10px;
-    border-radius: 10px 10px 10px 10px;
-    display: flex;
+    border-radius: 10px;
     text-align: left;
   }
 
-  .submit-button {
+  span {
+    color: red;
+    font-size: 12px;
+    align-self: flex-start; // 왼쪽 아래 정렬
+    margin-top: -5px; // 추가 여백 조절
+  }
+
+  button {
     background-color: rgb(73, 73, 73);
     color: white;
-    width: 350px;
+    width: 100%;
     height: 45px;
     margin: auto;
     display: block;
     font-size: 17px;
-    border-radius: 10px 10px 10px 10px;
-  }
-
-  .hidden {
-    display: none;
-    /*visibility:hidden;*/
-  }
-  .hidden-label {
-    /*display: none;*/
-    visibility: hidden;
-  }
-
-  input::placeholder {
-    color: grey;
-  }
-
-  a:link {
-    color: black;
-    text-decoration: none;
-  }
-  a:visited {
-    color: black;
-    text-decoration: none;
-  }
-  a:hover {
-    color: black;
-    text-decoration: none;
-  }
-  a:active {
-    color: black;
-    text-decoration: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 20px;
   }
 `;
 
