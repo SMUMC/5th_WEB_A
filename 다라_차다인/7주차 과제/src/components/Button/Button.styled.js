@@ -4,7 +4,7 @@ import theme from "../../theme";
 export const Btn = styled.button`
     ${theme.styles.flexCenterColumn}
     display: flex;
-    background-color: white;
+    background-color: ${(props) => (props.$isValidate ? theme.color.highlight : theme.color.white)};
     border: none;
     border-radius: 30px;
     padding: 20px;

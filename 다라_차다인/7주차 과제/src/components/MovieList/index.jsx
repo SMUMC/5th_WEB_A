@@ -12,7 +12,7 @@ export const MovieList = () => {
     return (
         <S.MovieListContainer>
             {isPageLoading ?
-                Array(7).fill(null).map(() => <SkeletonElement />)
+                Array(20).fill(null).map(() => <SkeletonElement />)
                 :
                 datam.map((item) => (
                     <PreviewMovieView key={item.id} movieData={item} />

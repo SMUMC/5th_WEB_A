@@ -15,7 +15,7 @@ export const Search = ({ onChange, searchResultList, loading }) => {
             {searchResultList.length > 0 &&
                 <S.SearchResultContainer>
                     {loading ?
-                        searchResultList.map(() => (<SkeletonElement />))
+                        Array(5).fill(null).map(() => (<SkeletonElement />))
                         :
                         searchResultList.map((item) => (
                             <PreviewMovieView key={item.id} movieData={item} />
