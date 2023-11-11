@@ -1,34 +1,11 @@
 import * as S from "../SearchBox/SearchBox.styled";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { UseDebouncing } from "../../Hooks/UseDebouncing";
-
+import { useMovieSearch } from "../../Hooks/searchData";
 export default function SearchBox() {
   const [isKeyword, setIsKeyword] = useState("");
-  const [isData, setIsData] = useState([]);
-
-  function searchMovie() {
-    const options = {
-      method: "GET",
-      headers: {
-        accept: "application/json",
-        Authorization: `Bearer ${process.env.REACT_APP_API_TOKEN}`,
-      },
-    };
-    const query = encodeURIComponent(isKeyword);
-    fetch(
-      `https://api.themoviedb.org/3/search/movie?query=${query}&include_adult=true&language=ko-KR&page=1`,
-      options
-    )
-      .then((response) => response.json())
-      .then((data) => setIsData(data.results))
-      .catch((err) => console.error(err));
-  }
-
-  const useDebouncing = UseDebouncing(isKeyword, 300);
-
-  useEffect(() => {
-    searchMovie();
-  }, [useDebouncing]);
+  const useDebouncing = UseDebouncing(isKeyword, 2000);
+  const searchData = useMovieSearch(useDebouncing);
 
   const handleInput = (event) => {
     setIsKeyword(event.target.value);
@@ -45,14 +22,24 @@ export default function SearchBox() {
         value={isKeyword}
       />
       <div>
-        {isData.map((result) => {
+        {searchData.map((result) => {
           const { title, poster_path, id, vote_average } = result;
           return (
             <div key={id} className="wrap">
-              <img src={IMAGE_URL + poster_path} alt={title} />
+              {poster_path === null ? (
+                <span className="baseImage"></span>
+              ) : (
+                <img src={IMAGE_URL + poster_path} alt={title} />
+              )}
               <span>
                 <h2>{title}</h2>
-                <h2>{Math.round(vote_average)}</h2>
+                <h2>
+                  {vote_average === 0 ? (
+                    <p>점수 음슴</p>
+                  ) : (
+                    Math.round(vote_average)
+                  )}
+                </h2>
               </span>
             </div>
           );

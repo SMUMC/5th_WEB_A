@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import Navbar from "../Components/Navbar/Navbar";
+import Footer from "../Components/Footer/Footer";
 import {
   MainPage,
   MovieDetail,
@@ -10,8 +11,6 @@ import {
   SignUp,
   Upcoming,
 } from "../Pages/index";
-
-// import Footer from "../Footer/Footer";
 
 export default function Routing() {
   return (
@@ -27,7 +26,7 @@ export default function Routing() {
         <Route path="/upcoming" element={<Upcoming />}></Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }

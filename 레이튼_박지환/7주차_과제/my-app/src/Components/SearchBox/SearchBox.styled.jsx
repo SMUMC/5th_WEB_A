@@ -23,13 +23,24 @@ export const Container = styled.div`
   }
 
   h2 {
+    width: 90px;
     font-size: 1rem;
+    overflow: hidden; // 넓이가 90px를 넒어서는 내용에 대해서는 보이지 않게 처리함
+    text-overflow: ellipsis; // 글자가 넓이 90px를 넘을 경우 생략부호를 표시함
+    white-space: nowrap; // 공백문자가 있는 경우 줄바꿈하지 않고 한줄로 나오게 처리함 (\A로 줄바꿈가능)
   }
+
   img {
     width: 100px;
     height: 100px;
   }
 
+  .baseImage {
+    color: white;
+    background: skyblue;
+    width: 100px;
+    height: 100px;
+  }
   input {
     ${theme.style.signUpBox};
   }
