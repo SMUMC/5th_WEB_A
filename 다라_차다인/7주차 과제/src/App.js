@@ -13,7 +13,8 @@ function App() {
     return (
         <ThemeProvider theme={theme}>
             <Navbar />
-            {isPageLoading ? <Loading /> : <Outlet />}
+            {/* {isPageLoading ? <Loading /> : <Outlet />} */}
+            <Outlet />
             <Footer />
         </ThemeProvider>
     );

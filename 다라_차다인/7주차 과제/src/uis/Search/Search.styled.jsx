@@ -65,4 +65,9 @@ export const SearchResultContainer = styled.div`
 
     background-color: ${theme.color.navbar};
     border-radius: 10px;
+
+    h5 {
+        color: ${theme.color.white};
+        font-size: 18px;
+    }
 `;

@@ -11,15 +11,8 @@ export const Signup = () => {
         handleSubmit,
         formState: { errors },
     } = useForm({
-        mode: "onChange",
+        mode: "onBlur",
         resolver: yupResolver(schema),
-        defaultValues: {
-            username: "",
-            email: "",
-            age: null,
-            password: "",
-            checkpassword: "",
-        },
     });
     const navigate = useNavigate();
 
@@ -38,29 +31,29 @@ export const Signup = () => {
                         {...register("username")}
                         placeholder="이름을 입력해주세요"
                     />
-                    {<S.AlertText>{errors.username?.message}</S.AlertText>}
+                    {errors.username?.message && <S.AlertText>{errors.username?.message}</S.AlertText>}
                     <S.Input
                         {...register("email")}
                         placeholder="이메일을 입력해주세요"
                     />
-                    {<S.AlertText>{errors.email?.message}</S.AlertText>}
+                    {errors.email?.message && <S.AlertText>{errors.email?.message}</S.AlertText>}
                     <S.Input
                         {...register("age")}
                         placeholder="나이를 입력해주세요"
                     />
-                    {<S.AlertText>{errors.age?.message}</S.AlertText>}
+                    {errors.age?.message && <S.AlertText>{errors.age?.message}</S.AlertText>}
                     <S.Input
                         {...register("password")}
                         type="password"
                         placeholder="비밀번호를 입력해주세요"
                     />
-                    {<S.AlertText>{errors.password?.message}</S.AlertText>}
+                    {errors.password?.message && <S.AlertText>{errors.password?.message}</S.AlertText>}
                     <S.Input
                         {...register("checkpassword")}
                         type="password"
                         placeholder="비밀번호 확인"
                     />
-                    {<S.AlertText>{errors.checkpassword?.message}</S.AlertText>}
+                    {errors.checkpassword?.message && <S.AlertText>{errors.checkpassword?.message}</S.AlertText>}
                 </S.InputContainer>
                 <Button title="제출하기" />
             </S.Container>

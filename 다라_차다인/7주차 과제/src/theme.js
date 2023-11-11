@@ -3,6 +3,8 @@ const color = {
     black: "#000000",
     background: "#22254B",
     navbar: "#1a1c3a",
+    content: "#373B69",
+    skeletonBg: "#41467d",
     highlight: "#FFCD28",
     fail: "#EB3232",
     success: "#1478FF",
