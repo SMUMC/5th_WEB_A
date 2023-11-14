@@ -1,0 +1,15 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50vh; /* 화면 전체 높이에 대한 100% */
+}
+
+.input-box {
+  width: 200px; /* 원하는 너비 설정 */
+  padding: 15px; /* 내부 여백 설정 */
+  border: 1px solid #ccc; /* 테두리 스타일 및 색상 설정 */
+  border-radius: 20px; /* 둥근 테두리 반지름 설정 */
+  /* outline: none; 포커스 시 테두리 제거 */
+}
