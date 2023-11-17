@@ -11,12 +11,12 @@ export const Container = styled.div`
   }
 
   form {
-    ${theme.style.flexCenterColumn}
+    ${theme.style.flexCenterColumn};
     margin: 20px;
   }
 
   input {
-    ${theme.style.signUpBox}
+    ${theme.style.signUpBox};
   }
 
   p {
@@ -29,7 +29,7 @@ export const Container = styled.div`
   }
 
   button {
-    ${theme.style.signUpBox}
+    ${theme.style.signUpBox};
   }
   button:disabled {
     background-color: grey;
