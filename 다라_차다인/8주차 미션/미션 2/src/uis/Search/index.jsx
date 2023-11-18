@@ -12,7 +12,7 @@ export const Search = ({ onChange, searchResultList, loading }) => {
                 <Input onChange={(e) => onChange(e.target.value)} />
                 <S.SearchButton />
             </S.SearchContainer>
-            {searchResultList.length > 0 &&
+            {searchResultList && searchResultList.length > 0 &&
                 <S.SearchResultContainer>
                     {loading ?
                         Array(5).fill(null).map(() => (<SkeletonElement />))

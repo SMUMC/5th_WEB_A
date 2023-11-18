@@ -41,7 +41,7 @@ const router = createBrowserRouter([
                 loader: getUpComing,
             },
             {
-                path: "movie/:id/:title",
+                path: "movie/:id",
                 element: <MovieDetail />,
             },
             {

@@ -8,7 +8,7 @@ const PreviewMovieView = (props) => {
     const navigate = useNavigate();
 
     const handleChangePage = () => {
-        navigate(`/movie/${id}/${original_title}`, {
+        navigate(`/movie/${id}`, {
             state: {
                 backdrop_path: backdrop_path,
                 poster_path: poster_path,

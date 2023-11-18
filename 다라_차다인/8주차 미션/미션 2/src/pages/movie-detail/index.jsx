@@ -1,27 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import * as S from "./MovieDetail.styled";
 import { useLocation, useParams } from "react-router-dom";
-import { getCredits } from "../../api/getCredits";
+import useGetCredits from "../../api/useGetCredits";
 import { Credits } from "../../uis/Credits";
 
 export const MovieDetail = () => {
     const state = useLocation().state;
-    const { id, title } = useParams();
+    const { id } = useParams();
     const imgUrl = process.env.REACT_APP_POSTER_BASE_URL;
-    const { backdrop_path, poster_path, vote_average, overview, release_date } = state;
+    const { original_title, backdrop_path, poster_path, vote_average, overview, release_date } = state;
     const star = vote_average && "⭐".repeat(Math.floor(vote_average));
-    const [creditList, setCreditList] = useState([]);
-
-    const getCreditsProps = {
+    const useGetCreditsProps = {
         id: id,
         language: "ko-KR"
     };
-
-    useEffect(() => {
-        getCredits(getCreditsProps).then((res) => {
-            setCreditList(res);
-        })
-    }, []);
+    const { loading, error, data: creditList } = useGetCredits(useGetCreditsProps);
 
     return (
         <S.Container>
@@ -30,7 +23,7 @@ export const MovieDetail = () => {
                 <S.MovieDataContainer>
                     <S.Poster src={imgUrl + poster_path} />
                     <S.MovieInfomationContainer>
-                        <h3>{title}</h3>
+                        <h3>{original_title}</h3>
                         <h5>평점 {star}</h5>
                         <h5>개봉일 {release_date}</h5>
                         <h5>줄거리</h5>
