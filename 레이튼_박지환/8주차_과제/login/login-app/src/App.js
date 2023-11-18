@@ -13,7 +13,6 @@ function App() {
   useEffect(() => {
     setIsLogin(token ? true : false);
   }, [token]);
-
   const handleId = (e) => {
     setId(e.target.value);
   };
@@ -40,7 +39,7 @@ function App() {
     <form onSubmit={handleSubmit}>
       {isLogin ? (
         <input
-          type="text"
+          type="hidden"
           // value={id}
           onChange={handleId}
           defaultValue="umcweb"
@@ -48,7 +47,7 @@ function App() {
         />
       ) : (
         <input
-          type="hidden"
+          type="text"
           // value={id}
           onChange={handleId}
           defaultValue="umcweb"
@@ -57,7 +56,7 @@ function App() {
       )}
       {isLogin ? (
         <input
-          type="password"
+          type="hidden"
           // value={pw}
           onChange={handlePw}
           defaultValue="1234"
@@ -65,7 +64,7 @@ function App() {
         />
       ) : (
         <input
-          type="hidden"
+          type="password"
           // value={pw}
           onChange={handlePw}
           defaultValue="1234"
@@ -77,11 +76,9 @@ function App() {
           로그아웃{" "}
         </button>
       ) : (
-        <>
-          <button loading={loading ? "true" : "false"}>로그인</button>
-          <div>{token}</div>
-        </>
+        <button loading={loading ? "true" : "false"}>로그인</button>
       )}
+      {isLogin ? <div>{token}</div> : <div>{token}</div>}
     </form>
   );
 }
