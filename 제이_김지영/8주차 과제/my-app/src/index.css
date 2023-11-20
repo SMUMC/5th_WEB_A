@@ -1,0 +1,20 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  background-color: #22254b;
+  padding: 1rem;
+
+  /* background GIF  */
+  background-image: url("./stars.gif");
+  background-size: cover;
+  background-position: center;
+  /* filter: blur(5px); */
+  z-index: -1;
+}
