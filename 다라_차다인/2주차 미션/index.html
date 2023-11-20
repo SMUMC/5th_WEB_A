@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page Title</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
+<body>
+    <div class="login-container">
+        <img src="../1주차 과제/배경.svg " class="login-background">
+            <div class="login-box"></div>
+            <div class="login-box-direction">
+                <div class="login-box__title">
+                    <h1>회원가입</h1>
+                </div>
+                <div class="login-box__input-container">
+                    <div>
+                        <p style="margin: 1px;">이름</p>
+                        <input class="login-box__input-layout" type="text" id="username-input">
+                        <p class="login-box__alert-text" id="username">필수 입력 항목입니다!</p>
+                    </div>
+                    
+                    <div>
+                        <p style="margin: 1px;">닉네임</p>
+                        <input class="login-box__input-layout" type="text" id="nickname-input">
+                        <p class="login-box__alert-text" id="nickname">닉네임은 2~5 글자로 구성해주세요!</p>
+                    </div>
+                    
+                    <div>
+                        <p style="margin: 1px;">이메일</p>
+                        <input class="login-box__input-layout" type="email" id="email-input">
+                        <p class="login-box__alert-text" id="email">올바른 닉네임 형식이 아닙니다!</p>
+                    </div>
+                    
+                    <div>
+                        <p style="margin: 1px;">비밀번호</p>
+                        <input class="login-box__input-layout" type="password" id="password-input">
+                        <p class="login-box__alert-text" id="password">영어+숫자+특수문자를 조합하여 작성해주세요.</p>    
+                    </div>
+                    
+                    <div>
+                        <p style="margin: 1px;">비밀번호 확인</p>
+                        <input class="login-box__input-layout" type="password" id="confirm-password-input">
+                        <p class="login-box__alert-text" id="confirm-password">비밀번호가 일치하지 않습니다.</p>
+                    </div>
+                </div>
+                <button class="login-submit-button">가입하기</button>
+
+                <div 
+                    id="modalBackground" 
+                    class="modal-contianer__background"
+                    style="
+                        display: none;
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        bottom: 0;
+                        right: 0;
+                        background: rgba(0, 0, 0, 0.8);
+                    "
+                >
+                    <div class="modal-contianer">
+                        <div class="modal-contianer__modal">
+                            <h3 class="modal-contianer__title">가입 성공!</h3>
+                            <h3 class="modal-contianer__descriptions">umc 챌린저 가입을 축하합니다!!</h3>
+                            <button 
+                                id="modalCloseButton" 
+                                class="modal-contianer__close"
+                                style="
+                                    display: flex;
+                                    align-self: flex-end;
+                            ";
+                            >닫기</button>
+                        </div>
+                    </div>
+              </div>
+
+            </div>
+        </img>
+    </div>
+
+    <script>
+        //사용자이름@도메인, 도메인 최대 2~3자
+        const emailRegExp = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
+        
+        //영문 숫자 특수기호 조합 8자리 이상
+        const passwordRegExp = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,15}$/
+
+        const usernameElement = document.getElementById("username");
+        const nicknameElement = document.getElementById("nickname");
+        const emailElement = document.getElementById("email")
+        const passwordElement = document.getElementById("password");
+        const confirmPasswordElement = document.getElementById("confirm-password");
+        const submitElement = document.querySelector(".login-submit-button");
+
+        let complete = 0;
+
+        submitElement.addEventListener("click", function() {
+            const username = document.getElementById("username-input").value;
+            const nickname = document.getElementById("nickname-input").value;
+            const email = document.getElementById("email-input").value;
+            const password = document.getElementById("password-input").value.trim();
+            const confirmPassword = document.getElementById("confirm-password-input").value.trim();
+            
+            complete = 0;
+            
+            if (username === "") {
+                usernameElement.style.display = "block";
+            } else {
+                usernameElement.style.display = "block";
+                usernameElement.style.color = "green";
+                usernameElement.innerText = "멋진 이름이네요!";
+                complete += 1;
+            }
+
+            if (nickname.length > 6 || nickname.length < 2) {
+                nicknameElement.style.display = "block";
+            } else {
+                nicknameElement.style.display = "block";
+                nicknameElement.style.color = "green";
+                nicknameElement.innerText = "멋진 닉네임이네요!";
+                complete += 1;
+            }
+            
+            if (email.match(emailRegExp) === null) {
+                emailElement.style.display = "block";
+            } else {
+                emailElement.style.display = "block";
+                emailElement.style.color = "green";
+                emailElement.innerText = "올바른 이메일 형식입니다!";
+                complete += 1;
+            }
+            
+            if (password.match(passwordRegExp) === null) {
+                passwordElement.style.display = "block";
+            } else {
+                passwordElement.style.display = "block";
+                passwordElement.style.color = "green";
+                passwordElement.innerText = "올바른 비밀번호입니다!";
+                complete += 1;
+            }
+
+            if (confirmPassword === "" || confirmPassword !== password) {
+                confirmPasswordElement.style.display = "block";
+            } else {
+                confirmPasswordElement.style.display = "block";                
+                confirmPasswordElement.style.color = "green";
+                confirmPasswordElement.innerText = "비밀번호가 일치합니다.";
+                complete += 1;
+            }
+        });
+
+        const openButtonElement = document.querySelector(".login-submit-button");
+        const closeButtonElement = document.getElementById("modalCloseButton");
+        const ModalElement = document.getElementById("modalBackground");
+        let isClicked = false;
+
+        function openModal() {
+            if (!isClicked && complete === 5) {
+                ModalElement.style.display = "block";
+                isClicked = true;
+            }
+        }
+
+        function closeModal() {
+            if (isClicked) {
+                ModalElement.style.display = "none";
+                isClicked = false;
+            }
+        }
+
+        openButtonElement.addEventListener("click", function() {
+            openModal();
+        });
+        closeButtonElement.addEventListener("click", function() {
+            closeModal();
+        });
+    </script>
+</body>
+</html>
