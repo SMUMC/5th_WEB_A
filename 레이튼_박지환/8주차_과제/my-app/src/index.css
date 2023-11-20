@@ -1,0 +1,28 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(27, 20, 130);
+}
+
+body::-webkit-scrollbar {
+  width: 12px; /* 스크롤바의 너비 */
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #04d9b2; /* 스크롤바의 색상 */
+  border-radius: 50px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #0378a6; /*스크롤바 뒷 배경 색상*/
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: #011c40;
+}
