@@ -10,9 +10,11 @@ function App() {
   const token = localStorage.getItem("token");
   const selector = useSelector((state) => state.login);
   const [isLogin, setIsLogin] = useState(false);
+
   useEffect(() => {
     setIsLogin(token ? true : false);
   }, [token]);
+
   const handleId = (e) => {
     setId(e.target.value);
   };
@@ -30,7 +32,6 @@ function App() {
 
   const handleLogout = (e) => {
     e.preventDefault();
-
     dispatch(logout());
     console.log(isLogin);
   };
