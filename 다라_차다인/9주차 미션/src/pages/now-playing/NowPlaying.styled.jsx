@@ -3,6 +3,7 @@ import theme from "../../theme";
 
 export const Container = styled.div`
     ${theme.styles.ContainerStyles};
+    flex-direction: column;
 `;
 
 export const SkeletonContainer = styled.div`
@@ -11,4 +12,8 @@ export const SkeletonContainer = styled.div`
     justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
+`;
+
+export const LoadingSpinnerContainer = styled.div`
+    ${theme.styles.flexCenterColumn}
 `;

@@ -5,6 +5,11 @@ import App from "./App";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Nowplaying, Popular, TopRated, UpComing, ErrorPage, Loading, Home, Signup, Login } from "./pages/index";
 import { MovieDetail } from "./pages/movie-detail";
+import { QueryClient, QueryClientProvider } from "react-query";
+import { ReactQueryDevtools } from "react-query/devtools";
+import { PersistGate } from "redux-persist/lib/integration/react";
+import { Provider } from "react-redux";
+import { store, persistor } from "../src/redux/store/index";
 
 const router = createBrowserRouter([
     {
@@ -49,6 +54,14 @@ const router = createBrowserRouter([
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+const queryClient = new QueryClient();
 root.render(
-    <RouterProvider router={router} fallbackElement={<Loading />} />
+    <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
+            <QueryClientProvider client={queryClient}>
+                <RouterProvider router={router} fallbackElement={<Loading />} />
+                <ReactQueryDevtools />
+            </QueryClientProvider>
+        </PersistGate>
+    </Provider>
 );

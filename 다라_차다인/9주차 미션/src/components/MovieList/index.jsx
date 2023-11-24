@@ -1,6 +1,5 @@
 import React from "react";
 import PreviewMovieView from "../../components/PreviewMovie/index";
-import { useLoaderData, useNavigation } from "react-router-dom";
 import * as S from "./MovieList.styled";
 import { SkeletonElement } from "../../uis/Skeleton";
 

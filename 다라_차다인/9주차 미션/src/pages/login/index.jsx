@@ -5,7 +5,9 @@ import * as S from "./Login.styled";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useNavigate } from "react-router-dom";
 import { schema } from "../login/schema";
-import { login } from "../../api/login";
+import { loginActions } from "../../redux/actions/loginActions";
+import { getUserDataActions } from "../../redux/actions/getUserDataActions";
+import { useDispatch } from "react-redux";
 
 export const Login = () => {
     const {
@@ -16,15 +18,16 @@ export const Login = () => {
         mode: "onBlur",
         resolver: yupResolver(schema),
     });
+    const dispatch = useDispatch();
     const navigate = useNavigate();
+    const accessToken = localStorage.getItem("accessToken");
 
     const onSubmit = (value) => {
-        login(value).then((res) => {
-            if (res) {
-                alert("로그인 되었습니다!");
-                navigate("/");
-            }
-        });
+        const id = value.userId;
+        const password = value.password;
+        dispatch(loginActions({ id, password }));
+        if (accessToken) dispatch(getUserDataActions(accessToken));
+        navigate("/");
     }
 
     return (

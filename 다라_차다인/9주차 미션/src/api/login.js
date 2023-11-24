@@ -1,7 +1,7 @@
 import axios from "axios";
 
-export const login = (loginData) => {
-    const { userId, password } = loginData;
+export const login = (userId, password) => {
+    // const { userId, password } = loginData;
     return axios
         .post("http://localhost:8080/auth/login", {
             username: userId,
@@ -9,9 +9,9 @@ export const login = (loginData) => {
         })
         .then((res) => {
             if (res.request.status === 200) {
-                localStorage.setItem("accessToken", res.data.token);
-                localStorage.setItem("username", res.data.username);
-                return true;
+                // localStorage.setItem("accessToken", res.data.token);
+                // localStorage.setItem("username", res.data.username);
+                return res;
             }
         })
         .catch((res) => {

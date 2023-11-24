@@ -1,20 +1,37 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import * as S from "./Popular.styled";
 import { MovieList } from "../../components/MovieList";
-import useCustomGetData from "../../api/useCustomGetData";
 import { SkeletonElement } from "../../uis/Skeleton";
+import { fetchCustomGetData } from "../../api/fetchCustomGetData";
+import { useQuery, useQueryClient } from "react-query";
 
 export const Popular = () => {
   const [page, setPage] = useState(1);
-  const customGetDataProps = {
-    type: "popular",
-    language: "ko-KR",
-    page: page,
-  };
-  const { loading, error, data } = useCustomGetData(customGetDataProps);
+  const queryClient = useQueryClient();
+  const {
+    data,
+    isLoading,
+    isError
+  } = useQuery(
+    ["movie-data", page],
+    () => fetchCustomGetData("popular", "ko-KR", page),
+    {
+      staleTime: 6000,
+      cacheTime: 36000,
+      keepPreviousData: true,
+    }
+  );
+  const movieData = data?.data?.results || [];
+
+  useEffect(() => {
+    const nextPage = page + 1;
+    queryClient.prefetchQuery(["movie-data", nextPage], () =>
+      fetchCustomGetData("popular", "ko-KR", nextPage)
+    );
+  }, [page, queryClient]);
 
   const onClickPageDown = () => {
-    if (page !== 1) {
+    if (!isLoading && page !== 1) {
       setPage(page - 1);
     } else {
       alert('가장 첫번째 페이지 입니다.');
@@ -22,18 +39,18 @@ export const Popular = () => {
   }
 
   const onClickPageUp = () => {
-    setPage(page + 1);
+    if (!isLoading) setPage(page + 1);
   }
 
   return (
     <>
-      {loading ?
+      {isLoading ?
         <S.SkeletonContainer>
           {Array(20).fill(null).map((_, index) => <SkeletonElement key={index} />)}
         </S.SkeletonContainer>
         :
         <S.Container>
-          <MovieList movieData={data} loading={loading} />
+          <MovieList movieData={movieData} loading={isLoading} />
           <S.PageContainer>
             <S.ArrowLeft onClick={onClickPageDown} page={page}>{"<"}</S.ArrowLeft>
             <p>{page}</p>
