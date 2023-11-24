@@ -7,13 +7,12 @@ export const SkeletonContainer = styled.div`
     justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
+    width: 890px;
 `;
 
 export const Container = styled.div`
-    ${theme.styles.ContainerStyles};
-    align-items: center;
-    flex-direction: column;
-    gap: 30px;
+    ${theme.styles.flexCenterColumn};
+    margin-top: 70px;
 `;
 
 export const PageContainer = styled.div`

@@ -43,21 +43,21 @@ export const Popular = () => {
   }
 
   return (
-    <>
+    <S.Container>
       {isLoading ?
         <S.SkeletonContainer>
           {Array(20).fill(null).map((_, index) => <SkeletonElement key={index} />)}
         </S.SkeletonContainer>
         :
-        <S.Container>
+        <>
           <MovieList movieData={movieData} loading={isLoading} />
           <S.PageContainer>
             <S.ArrowLeft onClick={onClickPageDown} page={page}>{"<"}</S.ArrowLeft>
             <p>{page}</p>
             <S.ArrowRight onClick={onClickPageUp}>{">"}</S.ArrowRight>
           </S.PageContainer>
-        </S.Container>
+        </>
       }
-    </>
+    </S.Container>
   );
 }

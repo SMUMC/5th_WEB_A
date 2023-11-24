@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 const PreviewMovieView = (props) => {
     const ImgUrl = process.env.REACT_APP_POSTER_BASE_URL;
+    const sampleImg = "https://via.placeholder.com/150x300/1a1c3a/7A6F95/?text=No+Image";
     const { id, backdrop_path, poster_path, original_title, vote_average, overview, release_date } = props.movieData;
     const navigate = useNavigate();
 
@@ -22,7 +23,7 @@ const PreviewMovieView = (props) => {
 
     return (
         <S.Container onClick={handleChangePage}>
-            <S.Poster src={ImgUrl + poster_path}></S.Poster>
+            <S.Poster src={poster_path ? ImgUrl + poster_path : sampleImg}></S.Poster>
             <S.DescriptionContainer>
                 <p>{original_title}</p>
                 <p>⭐ {vote_average}</p>

@@ -1,9 +1,10 @@
 import styled from "styled-components";
+import theme from "../../theme";
 
 export const MovieListContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+    ${theme.styles.flexCenterRow}
     flex-wrap: wrap;
     gap: 20px;
+    width: 890px;
+    padding: 10px;
 `;
