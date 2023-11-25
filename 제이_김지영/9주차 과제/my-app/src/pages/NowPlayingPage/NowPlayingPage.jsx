@@ -1,16 +1,14 @@
-import { FetchData } from "../../Hooks/FetchData";
+import { FetchData2 } from "../../Hooks/FetchData";
 import MovieList from "../../Components/MovieList/MovieList";
 import LoadingSpinner from "../../Components/LoadingSpinner/LoadingSpinner";
 import { useState, useEffect } from "react";
 
 export default function NowPlaying() {
   const [page, setPage] = useState(1); // for infinite scroll
-  const [prevPage, setPrevPage] = useState(0);
-  const [nextPage, setNextPage] = useState(2);
+  //const [prevPage, setPrevPage] = useState(0);
+  //const [nextPage, setNextPage] = useState(2);
 
-  const { isData, isLoading } = FetchData("now_playing", page);
-  const { prevData, isPrevLoading } = FetchData("now_playing", prevPage);
-  const { nextData, isNextLoading } = FetchData("now_playing", nextPage);
+  const { isData, isLoading } = FetchData2("now_playing", page);
 
   useEffect(() => {
     // 컴포넌트가 마운트된 상태에서 활성화
@@ -23,21 +21,25 @@ export default function NowPlaying() {
         //맨 위로 스크롤할 때 끝까지 올리지 않아도 scrolledToTop이 참이 되도록
         //맨 아래로 스크롤할 때 끝까지 내리지 않아도 scrolledToBottom이 true가 되도록
         // const scrolledToTop = document.documentElement.scrollTop <= 10;
-        const scrolledToBottom =
-          window.innerHeight + document.documentElement.scrollTop >=
-          document.documentElement.offsetHeight - 5;
-        //console.log("scrolledToTop:", scrolledToTop);
-        //console.log("scrolledToBottom:", scrolledToBottom);
 
-        // if (scrolledToTop && prev > 1) {
-        //   // 페이지가 1보다 작거나 같은 경우에는 이벤트 처리하지 않음
-        //   // 스크롤이 맨 위에 도달하면 페이지를 감소시켜 새로운 데이터를 가져옴
-        //   setPrevPage(prev - 1);
-        //   return prev - 1;
-        // } else if (scrolledToBottom) {
-        if (scrolledToBottom) {
-          // 스크롤이 맨 아래에 도달하면 페이지를 증가시켜 새로운 데이터를 가져옴
-          setNextPage(prev + 1);
+        const { scrollTop, offsetHeight, scrollHeight } =
+          document.documentElement;
+        if (
+          window.innerHeight + Math.ceil(scrollTop) >= offsetHeight &&
+          scrollTop + window.innerHeight >= scrollHeight - 100
+        ) {
+          setPage((prevPage) => prevPage + 1);
+          //setLoading(true);
+
+          // if (scrolledToTop && prev > 1) {
+          //   // 페이지가 1보다 작거나 같은 경우에는 이벤트 처리하지 않음
+          //   // 스크롤이 맨 위에 도달하면 페이지를 감소시켜 새로운 데이터를 가져옴
+          //   setPrevPage(prev - 1);
+          //   return prev - 1;
+          // } else if (scrolledToBottom) {
+          // if (scrolledToBottom) {
+          //   // 스크롤이 맨 아래에 도달하면 페이지를 증가시켜 새로운 데이터를 가져옴
+          //   setNextPage(prev + 1);
           return prev + 1;
         }
 
@@ -57,34 +59,34 @@ export default function NowPlaying() {
 
   return (
     <>
-      <div>
+      {/* <div>
         <h1 style={{ fontSize: "100px", color: "white" }}>
           Prev Page: {prevPage}
         </h1>
         {prevData ? <MovieList films={prevData} /> : ""}
-      </div>
+      </div> */}
 
       {isLoading ? (
         <LoadingSpinner />
       ) : (
         <div>
-          <h1 style={{ fontSize: "100px", color: "white" }}>
+          {/* <h1 style={{ fontSize: "100px", color: "white" }}>
             Now Here: {page}
-          </h1>
+          </h1> */}
           <MovieList films={isData} />
         </div>
       )}
 
-      {isNextLoading ? (
+      {/* {isNextLoading ? (
         <LoadingSpinner />
       ) : (
         <div>
-          <h1 style={{ fontSize: "100px", color: "white" }}>
+          <h1 style={{ fontSize: "80px", color: "white" }}>
             Next Page: {nextPage}
           </h1>
           <MovieList films={nextData} />
         </div>
-      )}
+      )} */}
     </>
   );
 }
