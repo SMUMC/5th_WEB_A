@@ -5,7 +5,6 @@ export function FetchNowPlaying(category) {
   const [isData, setData] = useState([]);
   const [isLoading, setLoad] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
-
   useEffect(() => {
     const fetchMovie = async () => {
       setLoad(true);
@@ -29,24 +28,8 @@ export function FetchNowPlaying(category) {
     fetchMovie();
   }, [category, currentPage]);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (
-        window.innerHeight + window.scrollY >=
-        document.body.scrollHeight - 200
-      ) {
-        // innnerHeight 현재 페이지 높이
-        // window.scrollY 스크롤된 y축 길이
-        // 스크롤이 페이지 끝에 도달하면 다음 페이지를 가져온다.
-        setCurrentPage((prevPage) => prevPage + 1);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  return { isData, isLoading };
+  const changePage = (page) => {
+    setCurrentPage(page);
+  };
+  return { isData, isLoading, currentPage, changePage };
 }
