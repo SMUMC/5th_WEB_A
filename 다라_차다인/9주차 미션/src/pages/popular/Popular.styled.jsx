@@ -13,6 +13,7 @@ export const SkeletonContainer = styled.div`
 export const Container = styled.div`
     ${theme.styles.flexCenterColumn};
     margin-top: 70px;
+    gap: 10px;
 `;
 
 export const PageContainer = styled.div`
@@ -21,6 +22,7 @@ export const PageContainer = styled.div`
     padding: 10px 20px;
     justify-content: space-between;
     gap: 30px;
+    margin-bottom: 50px;
 
     p {
         display: flex;
