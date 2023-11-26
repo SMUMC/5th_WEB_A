@@ -1,6 +1,8 @@
 import { FetchNowPlaying } from "../Hooks/FetchNowPlaying";
 import MovieList from "../Components/MovieList/MovieList";
 import { useEffect, useState } from "react";
+import SmallSpinner from "../Components/SmallSpinner/SmallSpinner";
+import * as S from "../Pages/NowPlaying.styled";
 
 export default function NowPlaying() {
   const [throttle, setThrottle] = useState(false);
@@ -28,11 +30,16 @@ export default function NowPlaying() {
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [isData]);
+  }, [isLoading]);
   console.log(isLoading);
   return (
     <>
       <MovieList films={isData} />
+      {isLoading && (
+        <S.loaderContainer>
+          <SmallSpinner />
+        </S.loaderContainer>
+      )}
     </>
   );
 }
