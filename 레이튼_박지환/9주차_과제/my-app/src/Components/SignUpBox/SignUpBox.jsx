@@ -76,6 +76,8 @@ export default function SignUpBox() {
     if (value === "" || isNaN(value)) {
       setAge(value);
       setAgeMessege("반드시 숫자를 입력해주세요!");
+    } else if (value < 0 && value % 1 !== 0) {
+      setAgeMessege("음수도 안되고 소수도 될 수 없습니다!");
     } else if (value < 0) {
       setAgeMessege("음수가 될 수 없습니다!");
     } else if (value % 1 !== 0) {

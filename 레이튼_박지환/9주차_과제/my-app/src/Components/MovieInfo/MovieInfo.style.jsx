@@ -38,7 +38,6 @@ export const InfoBackground = styled.div`
 
   h2 {
     font-size: 1.2rem;
-    margin-bottom: 100px;
   }
   h3 {
     font-size: 1rem;
@@ -50,3 +49,12 @@ export const InfoBackground = styled.div`
 // export const Container = styled.div`
 //   margin-bottom: 100px;
 // `;
+
+export const BasicImg = styled.span`
+  background-color: #e0115f;
+  width: 500px;
+  height: 750px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;

@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import Navbar from "../Components/Navbar/Navbar";
 import Footer from "../Components/Footer/Footer";
+import * as S from "../Router/Routing.styled";
 import {
   MainPage,
   MovieDetail,
@@ -15,20 +16,22 @@ import {
 
 export default function Routing() {
   return (
-    <>
+    <S.Container>
       <Navbar />
-      <Routes>
-        <Route path="/" element={<MainPage />}></Route>
-        <Route path="/now_playing" element={<NowPlaying />}></Route>
-        <Route path="/movie/:id" element={<MovieDetail />}></Route>
-        <Route path="/popular" element={<Popular />}></Route>
-        <Route path="/top_rated" element={<TopRated />}></Route>
-        <Route path="/signup" element={<SignUp />}></Route>
-        <Route path="/upcoming" element={<Upcoming />}></Route>
-        <Route path="*" element={<NotFound />}></Route>
-        <Route path="/login" element={<LoginPage />}></Route>
-      </Routes>
+      <S.MovieContainer>
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/now_playing" element={<NowPlaying />} />
+          <Route path="/movie/:id" element={<MovieDetail />} />
+          <Route path="/popular" element={<Popular />} />
+          <Route path="/top_rated" element={<TopRated />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/upcoming" element={<Upcoming />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </S.MovieContainer>
       <Footer />
-    </>
+    </S.Container>
   );
 }

@@ -3,7 +3,9 @@ import * as S from "../Footer/Footer.style";
 function Footer() {
   return (
     <S.FooterContainer>
-      <p>UMC Web A팀 최고!</p>
+      <div>
+        <p>UMC Web A팀 최고!</p>
+      </div>
     </S.FooterContainer>
   );
 }

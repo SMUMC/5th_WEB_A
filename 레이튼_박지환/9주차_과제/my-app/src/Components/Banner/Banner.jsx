@@ -4,12 +4,11 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux/es/hooks/useSelector";
 export default function Banner() {
   const [data, setData] = useState(false);
+  const isLogin = useSelector((state) => state.signUp.isLogin);
   const isPending = useSelector((state) => state.signUp.isPending);
-  const Login = useSelector((state) => state.signUp.isLogin); // 로그아웃시 state변화를 만들기 위해서 로그인 상태를 검증한다.
+  const token = localStorage.getItem("token");
 
   useEffect(() => {
-    const token = localStorage.getItem("token");
-
     const fetchUserData = async () => {
       const options = {
         method: "GET",
@@ -31,7 +30,6 @@ export default function Banner() {
       fetchUserData();
     }
   }, [isPending]);
-  console.log(data);
   return (
     <S.BannerContainer>
       {isPending ? (
@@ -39,7 +37,11 @@ export default function Banner() {
       ) : (
         <>
           <h1>Break The Rules</h1>
-          {Login ? <h2>{data}님 환영합니다!</h2> : <h2>환영합니다.</h2>}
+          {token && isLogin ? (
+            <h2>{data}님 환영합니다!</h2>
+          ) : (
+            <h2>환영합니다.</h2>
+          )}
           <h3>기말고사 파이팅!</h3>
         </>
       )}

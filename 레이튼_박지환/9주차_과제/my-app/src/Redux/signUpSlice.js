@@ -17,6 +17,15 @@ export const signUpApi = createAsyncThunk("signUp", async (body) => {
   return await response.data;
 });
 
+export const loginApi = createAsyncThunk("login", async (body) => {
+  const response = await axios.post("http://localhost:8080/auth/login", body, {
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  return await response.data;
+});
+
 export const signUpSlice = createSlice({
   name: "signUp",
   initialState,
@@ -25,7 +34,6 @@ export const signUpSlice = createSlice({
       state.isLogin = false;
       state.isSignup = false;
       state.isPending = false;
-      state.token = null;
       localStorage.clear();
     },
   },
@@ -59,16 +67,6 @@ export const signUpSlice = createSlice({
         state.isPending = false;
       });
   },
-});
-
-export const loginApi = createAsyncThunk("login", async (body) => {
-  const response = await axios.post("http://localhost:8080/auth/login", body, {
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-  console.log(await response.data);
-  return await response.data;
 });
 
 export const { logout } = signUpSlice.actions;

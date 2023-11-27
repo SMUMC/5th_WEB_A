@@ -16,7 +16,7 @@ export const Background = styled.div`
   height: 100vh;
   top: 0;
   left: 0;
-  background: white;
+  background: transparent;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,17 +24,19 @@ export const Background = styled.div`
   z-index: 999;
 
   p {
+    color: yellow;
     font: 1rem;
     text-align: center;
   }
 `;
 
 export const Loader = styled.div`
-  margin: 10px;
-  border: 16px solid black;
-  border-top: 16px solid blue;
-  border-bottom: 16px solid purple;
-  border-radius: 0%;
+  margin: 20px;
+  border-right: 16px solid red;
+  border-top: 16px solid yellow;
+  border-bottom: 16px solid orangered;
+  border-left: 16px solid green;
+  border-radius: 50%;
   width: 120px;
   height: 120px;
   animation: ${rotate} 1s linear infinite;

@@ -3,14 +3,15 @@ import { logout } from "../../Redux/signUpSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 function Navbar() {
-  const Login = useSelector((state) => state.signUp.isLogin); // 로그아웃시 state변화를 만들기 위해서 로그인 상태를 검증한다.
+  const token = localStorage.getItem("token");
   const dispatch = useDispatch();
-  console.log(Login);
+  const isLogin = useSelector((state) => state.signUp.isLogin);
+
   return (
     <S.NavContainer>
       <S.StyledLink to="/">Pflix</S.StyledLink>
       <div>
-        {Login ? (
+        {token && isLogin ? (
           <S.StyledLink onClick={() => dispatch(logout())}>
             로그아웃
           </S.StyledLink>

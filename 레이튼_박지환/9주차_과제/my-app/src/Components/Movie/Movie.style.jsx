@@ -9,11 +9,11 @@ export const MoviesStyle = styled.div`
   background-color: rgb(113, 106, 207);
 
   img {
-    width: 100%;
+    width: 220px;
     height: 300px;
   }
 
-  div {
+  span {
     display: flex;
     align-items: center;
     height: 80px;
@@ -21,4 +21,13 @@ export const MoviesStyle = styled.div`
     justify-content: space-between;
     padding: 0px 25px;
   }
+`;
+
+export const BasicImg = styled.div`
+  background-color: #e0115f;
+  width: 220px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
