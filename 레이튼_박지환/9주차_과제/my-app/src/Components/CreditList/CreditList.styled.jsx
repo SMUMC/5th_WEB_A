@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import theme from "../../theme";
 
 export const Container = styled.div`
   width: 100%;
@@ -28,7 +27,6 @@ export const CrewContainer = styled.div`
   width: 2000px;
   display: flex;
   flex-direction: row;
-  overflow-x: auto;
   overflow-x: auto;
 `;
 

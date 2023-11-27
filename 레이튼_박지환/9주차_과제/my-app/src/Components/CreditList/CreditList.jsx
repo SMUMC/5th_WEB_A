@@ -1,11 +1,20 @@
 import * as S from "../CreditList/CreditList.styled";
-
+import { StyledSlider } from "../Slick/Slick";
 export default function CreditList({ casts, crews }) {
+  const settings = {
+    dots: false,
+    Infinite: true,
+    arrows: false,
+    speed: 500,
+    slidesToShow: 10,
+    slidesToScroll: 8,
+    draggable: true,
+  };
   return (
     <>
       <S.Container>
         <h2>출연진</h2>
-        <S.CastContainer>
+        <StyledSlider {...settings}>
           {casts?.map((cast, index) => (
             // 데이터를 받아오기 전에 mapping을 하면 에러가 발생하기 때문에 ? optional chaining 연산자로 처리해준다.
             // 객체가 null 또는 undefined인 경우에도 에러를 발생시키지 않게 해준다.
@@ -24,11 +33,11 @@ export default function CreditList({ casts, crews }) {
               <p>{cast.original_name}</p>
             </S.ImageContainer>
           ))}
-        </S.CastContainer>
+        </StyledSlider>
       </S.Container>
       <S.Container>
         <h2>제작진</h2>
-        <S.CrewContainer>
+        <StyledSlider {...settings}>
           {crews?.map((crew, index) => (
             <S.ImageContainer key={`crew-${crew.id}-${index}`}>
               {crew.profile_path ? (
@@ -45,7 +54,7 @@ export default function CreditList({ casts, crews }) {
               <p>{crew.original_name}</p>
             </S.ImageContainer>
           ))}
-        </S.CrewContainer>
+        </StyledSlider>
       </S.Container>
     </>
   );

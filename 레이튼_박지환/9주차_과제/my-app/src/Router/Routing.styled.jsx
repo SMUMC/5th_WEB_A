@@ -7,5 +7,5 @@ export const Container = styled.div`
 `;
 
 export const MovieContainer = styled.div`
-  flex-grow: 1; // 빈공간을 채운다.
+  flex-grow: 1; // 여백을 채운다.
 `;
