@@ -1,7 +1,6 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import loginReducer from "../slices/loginSlice";
-import userReducer from "../slices/userSlice";
-import { persistReducer } from "redux-persist";
+import { PERSIST, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import { persistStore } from "redux-persist";
 
@@ -15,17 +14,26 @@ import { persistStore } from "redux-persist";
 const persistConfig = {
     key: 'root',
     storage,
+    whitelist: ["login"],
 }
 
 const rootReducer = combineReducers({
     login: loginReducer,
-    user: userReducer,
+    devTools: process.env.NODE_ENV !== 'production',
 })
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const store = configureStore({
     reducer: persistedReducer,
+
+    // non-serializable error solution
+    middleware: (getDefaultMiddleware) =>
+        getDefaultMiddleware({
+            serializableCheck: {
+                ignoredActions: [PERSIST],
+            },
+        }),
 });
 
 export const persistor = persistStore(store);

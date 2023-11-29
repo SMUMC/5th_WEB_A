@@ -13,7 +13,7 @@ const loginSlice = createSlice({
     initialState: initialState,
     reducers: {
         logout(state) {
-            state.isLogin = false;
+            Object.assign(state, initialState);   //로그인 정보 전체 초기화
             localStorage.clear();
         }
     },
